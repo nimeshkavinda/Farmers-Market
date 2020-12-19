@@ -48,8 +48,8 @@ D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Newtonsoft.
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\System.Web.Optimization.xml
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Antlr3.Runtime.pdb
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.AspNet.FriendlyUrls.xml
-D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csprojAssemblyReference.cache
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csproj.CopyComplete
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.dll
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.pdb
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csprojAssemblyReference.cache
