@@ -54,17 +54,20 @@
                                 </h4>
                             </div>
 
+                            <!--DoA Content-->
                             <div class="col-md-12">
                                 <hr />
-                                <section>
+                                <div class="DoAForm">
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaFName">First name</label>
                                             <asp:TextBox ID="doaFName" runat="server" type="text" class="form-control" placeholder="First name"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaFName" runat="server" ErrorMessage="Required" ControlToValidate="doaFName" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaLName">Last name</label>
                                             <asp:TextBox ID="doaLName" runat="server" type="text" class="form-control" placeholder="Last name"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaLName" runat="server" ErrorMessage="Required" ControlToValidate="doaLName" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaUsername">Username</label>
@@ -74,43 +77,50 @@
                                                 </div>
                                                 <asp:TextBox ID="doaUsername" runat="server" type="text" class="form-control" placeholder="Username"></asp:TextBox>
                                             </div>
+                                            <asp:RequiredFieldValidator ID="validateDoaUsername" runat="server" ErrorMessage="Required" ControlToValidate="doaUsername" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaDesignation">Designation</label>
                                             <asp:TextBox ID="doaDesignation" runat="server" type="text" class="form-control" placeholder="Designation"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaDesignation" runat="server" ErrorMessage="Required" ControlToValidate="doaDesignation" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaEmail">Email address</label>
                                             <asp:TextBox ID="doaEmail" runat="server" type="email" class="form-control" placeholder="Email address"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaEmail" runat="server" ErrorMessage="Required" ControlToValidate="doaEmail" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            <asp:RegularExpressionValidator ID="validateDoaEmailFormat" runat="server" ErrorMessage="Invalid email" ForeColor="Red" ControlToValidate="doaEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaMobile">Mobile</label>
                                             <asp:TextBox ID="doaMobile" runat="server" type="number" class="form-control" placeholder="Mobile"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaMobile" runat="server" ErrorMessage="Required" ControlToValidate="doaMobile" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="doaCity">City</label>
                                             <asp:TextBox ID="doaCity" runat="server" type="text" class="form-control" placeholder="City"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaCity" runat="server" ErrorMessage="Required" ControlToValidate="doaCity" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="doaState">State</label>
                                             <asp:TextBox ID="doaState" runat="server" type="text" class="form-control" placeholder="State"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaState" runat="server" ErrorMessage="Required" ControlToValidate="doaState" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="doaZip">Zip</label>
                                             <asp:TextBox ID="doaZip" runat="server" type="text" class="form-control" placeholder="Zip"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateDoaZip" runat="server" ErrorMessage="Required" ControlToValidate="doaZip" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                     </div>
                                     <asp:Button ID="btnDoaAccount" runat="server" Text="Create account" class="btn btn-primary" Style="margin-top: 10px;" OnClick="btnDoaAccount_Click" />
-                                </section>
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div
@@ -125,66 +135,80 @@
                                 </h4>
                             </div>
 
+                            <!--Keels Content-->
                             <div class="col-md-12">
                                 <hr />
-                                <section>
-                                    <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsFName">First name</label>
-                                            <asp:TextBox ID="keelsFName" runat="server" type="text" class="form-control" placeholder="First name"></asp:TextBox>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsLName">Last name</label>
-                                            <asp:TextBox ID="keelsLName" runat="server" type="text" class="form-control" placeholder="Last name"></asp:TextBox>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsUsername">Username</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="keelsUsernameSpan">@</span>
+                                <div class="KeelsForm">
+                                    <div class="col-md-12">
+                                        <hr />
+                                        <div class="form-row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsFName">First name</label>
+                                                <asp:TextBox ID="keelsFName" runat="server" type="text" class="form-control" placeholder="First name"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsFName" runat="server" ErrorMessage="Required" ControlToValidate="keelsFName" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsLName">Last name</label>
+                                                <asp:TextBox ID="keelsLName" runat="server" type="text" class="form-control" placeholder="Last name"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsLName" runat="server" ErrorMessage="Required" ControlToValidate="keelsLName" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsUsername">Username</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="keelsUsernameSpan">@</span>
+                                                    </div>
+                                                    <asp:TextBox ID="keelsUsername" runat="server" type="text" class="form-control" placeholder="Username"></asp:TextBox>
                                                 </div>
-                                                <asp:TextBox ID="keelsUsername" runat="server" type="text" class="form-control" placeholder="Username"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsUsername" runat="server" ErrorMessage="Required" ControlToValidate="keelsUsername" ForeColor="Red"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsDesignation">Designation</label>
+                                                <asp:TextBox ID="keelsDesignation" runat="server" type="text" class="form-control" placeholder="Designation"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsDesignation" runat="server" ErrorMessage="Required" ControlToValidate="keelsDesignation" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsEmail">Email address</label>
+                                                <asp:TextBox ID="keelsEmail" runat="server" type="email" class="form-control" placeholder="Email address"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsEmail" runat="server" ErrorMessage="Required" ControlToValidate="keelsEmail" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RegularExpressionValidator ID="validateKeelsEmailFormat" runat="server" ErrorMessage="Invalid email" ForeColor="Red" ControlToValidate="keelsEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                                            </div>
+                                            <div class="col-md-4 mb-3">
+                                                <label for="keelsMobile">Mobile</label>
+                                                <asp:TextBox ID="keelsMobile" runat="server" type="number" class="form-control" placeholder="Mobile"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsMobile" runat="server" ErrorMessage="Required" ControlToValidate="keelsMobile" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="keelsCity">City</label>
+                                                <asp:TextBox ID="keelsCity" runat="server" type="text" class="form-control" placeholder="City"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsCity" runat="server" ErrorMessage="Required" ControlToValidate="keelsCity" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="keelsState">State</label>
+                                                <asp:TextBox ID="keelsState" runat="server" type="text" class="form-control" placeholder="State"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsState" runat="server" ErrorMessage="Required" ControlToValidate="keelsState" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <label for="keelsZip">Zip</label>
+                                                <asp:TextBox ID="keelsZip" runat="server" type="text" class="form-control" placeholder="Zip"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateKeelsZip" runat="server" ErrorMessage="Required" ControlToValidate="keelsZip" ForeColor="Red"></asp:RequiredFieldValidator>
+                                            </div>
+                                        </div>
+                                        <asp:Button ID="btnKeelsAccount" runat="server" Text="Create account" class="btn btn-primary" Style="margin-top: 10px;" OnClick="btnKeelsAccount_Click" />
                                     </div>
-                                    <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsDesignation">Designation</label>
-                                            <asp:TextBox ID="keelsDesignation" runat="server" type="text" class="form-control" placeholder="Designation"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsEmail">Email address</label>
-                                            <asp:TextBox ID="keelsEmail" runat="server" type="email" class="form-control" placeholder="Email address"></asp:TextBox>
-                                        </div>
-                                        <div class="col-md-4 mb-3">
-                                            <label for="keelsMobile">Mobile</label>
-                                            <asp:TextBox ID="keelsMobile" runat="server" type="number" class="form-control" placeholder="Mobile"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                    <div class="form-row">
-                                        <div class="col-md-6 mb-3">
-                                            <label for="keelsCity">City</label>
-                                            <asp:TextBox ID="keelsCity" runat="server" type="text" class="form-control" placeholder="City"></asp:TextBox>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="keelsState">State</label>
-                                            <asp:TextBox ID="keelsState" runat="server" type="text" class="form-control" placeholder="State"></asp:TextBox>
-                                        </div>
-                                        <div class="col-md-3 mb-3">
-                                            <label for="keelsZip">Zip</label>
-                                            <asp:TextBox ID="keelsZip" runat="server" type="text" class="form-control" placeholder="Zip"></asp:TextBox>
-                                        </div>
-                                    </div>
-                                    <asp:Button ID="btnKeelsAccount" runat="server" Text="Create account" class="btn btn-primary" Style="margin-top: 10px;" OnClick="btnKeelsAccount_Click" />
-                                </section>
+                                </div>
                             </div>
                         </div>
-
                     </div>
+                    <!-- Tab content -->
                 </div>
-                <!-- Tab content -->
+
             </div>
         </div>
     </div>
