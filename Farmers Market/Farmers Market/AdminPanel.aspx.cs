@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.SessionState;
+using System.Web.UI.HtmlControls;
 
 namespace Farmers_Market
 {
@@ -13,7 +16,13 @@ namespace Farmers_Market
         {
             if(Session["webmaster"] != null)
             {
-                Response.Write("Welcome " + Session["webmaster"]);
+                Label loggedUser = (Label)Master.FindControl("loggedUser");
+                loggedUser.Text = Session["webmaster"].ToString();
+                PlaceHolder userControls = (PlaceHolder)Master.FindControl("userControls");
+                userControls.Visible = false;
+                PlaceHolder userAvatar = (PlaceHolder)Master.FindControl("userAvatar");
+                userAvatar.Visible = true;
+                loggedInWebMaster.Text = Session["webmaster"].ToString();
             }
         }
     }
