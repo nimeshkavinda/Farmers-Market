@@ -23,7 +23,7 @@
                                         <div class="form-group">
                                             <asp:TextBox runat="server" class="form-control form-control-user" type="password" id="txtWebMasterPassword" placeholder="Password" name="password" required="required"></asp:TextBox>
                                         </div>
-                                        <asp:Button ID="webMasterLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" OnClick="webMasterLogin_Click" />
+                                        <asp:Button ID="webMasterLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" OnClick="webMasterLogin_Click"/>
                                     </div>
                                 </div>
                             </div>
