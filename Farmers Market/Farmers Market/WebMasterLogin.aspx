@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebMasterLogin.aspx.cs" Inherits="Farmers_Market.WebForm1" %>
+﻿<%@ Page Title="WebMaster Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebMasterLogin.aspx.cs" Inherits="Farmers_Market.WebForm1" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -18,10 +18,10 @@
                                     </div>
                                     <div class="user">
                                         <div class="form-group">
-                                            <asp:TextBox runat="server" class="form-control form-control-user" type="text" id="txtWebMasterUsername" placeholder="Username" name="username"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control form-control-user" type="text" id="txtWebMasterUsername" placeholder="Username" name="username" required="required"></asp:TextBox>
                                         </div>
                                         <div class="form-group">
-                                            <asp:TextBox runat="server" class="form-control form-control-user" type="password" id="txtWebMasterPassword" placeholder="Password" name="password"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control form-control-user" type="password" id="txtWebMasterPassword" placeholder="Password" name="password" required="required"></asp:TextBox>
                                         </div>
                                         <asp:Button ID="webMasterLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" OnClick="webMasterLogin_Click" />
                                     </div>

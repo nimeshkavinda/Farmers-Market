@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="Farmers_Market.WebForm2" %>
+﻿<%@ Page Title="Admin Panel" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminPanel.aspx.cs" Inherits="Farmers_Market.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -60,11 +60,11 @@
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaFName">First name</label>
-                                            <input type="text" class="form-control" id="doaFName" placeholder="First name" required>
+                                            <asp:TextBox ID="doaFName" runat="server" type="text" class="form-control" placeholder="First name" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaLName">Last name</label>
-                                            <input type="text" class="form-control" id="doaLName" placeholder="Last name" required>
+                                            <asp:TextBox ID="doaLName" runat="server" type="text" class="form-control" placeholder="Last name" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaUsername">Username</label>
@@ -72,46 +72,46 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="doaUsernameSpan">@</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="doaUsername" placeholder="Username" required>
+                                                <asp:TextBox ID="doaUsername" runat="server" type="text" class="form-control" placeholder="Username" required="required"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaDesignation">Designation</label>
-                                            <input type="text" class="form-control" id="doaDesignation" placeholder="Designation" required>
+                                            <asp:TextBox ID="doaDesignation" runat="server" type="text" class="form-control" placeholder="Designation" required="required"></asp:TextBox>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
                                             <label for="doaEmail">Email address</label>
-                                            <input type="text" class="form-control" id="doaEmail" placeholder="Email address" required>
+                                            <asp:TextBox ID="doaEmail" runat="server" type="email" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-4 mb-3">
                                             <label for="doaMobile">Mobile</label>
-                                            <input type="text" class="form-control" id="doaMobile" placeholder="Mobile" required>
+                                            <asp:TextBox ID="doaMobile" runat="server" type="number" class="form-control" placeholder="Mobile" required="required"></asp:TextBox>
                                         </div>
-                                    </div>                         
+                                    </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="doaCity">City</label>
-                                            <input type="text" class="form-control" id="doaCity" placeholder="City" required>
+                                            <asp:TextBox ID="doaCity" runat="server" type="text" class="form-control" placeholder="City" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="doaState">State</label>
-                                            <input type="text" class="form-control" id="doaState" placeholder="State" required>
+                                            <asp:TextBox ID="doaState" runat="server" type="text" class="form-control" placeholder="State" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-3 mb-3">
                                             <label for="doaZip">Zip</label>
-                                            <input type="text" class="form-control" id="doaZip" placeholder="Zip" required>
+                                            <asp:TextBox ID="doaZip" runat="server" type="text" class="form-control" placeholder="Zip" required="required"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary" type="submit" style="margin-top: 10px;">Create account</button>
+                                    <asp:Button ID="btnDoaAccount" runat="server" Text="Create account" class="btn btn-primary" style="margin-top: 10px;" />
                                 </section>
                             </div>
                         </div>
-
                     </div>
+
                     <div
                         class="tab-pane fade"
                         id="v-tabs-keels"
@@ -129,46 +129,54 @@
                                 <section>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3">
-                                            <label for="validationDefault01">First name</label>
-                                            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+                                            <label for="keelsFName">First name</label>
+                                            <asp:TextBox ID="TextBox1" runat="server" type="text" class="form-control" placeholder="First name" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label for="validationDefault02">Last name</label>
-                                            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
+                                            <label for="keelsLName">Last name</label>
+                                            <asp:TextBox ID="TextBox2" runat="server" type="text" class="form-control" placeholder="Last name" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-4 mb-3">
-                                            <label for="validationDefaultUsername">Username</label>
+                                            <label for="keelsUsername">Username</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                    <span class="input-group-text" id="keelsUsernameSpan">@</span>
                                                 </div>
-                                                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                                                <asp:TextBox ID="TextBox3" runat="server" type="text" class="form-control" placeholder="Username" required="required"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="keelsDesignation">Designation</label>
+                                            <asp:TextBox ID="TextBox4" runat="server" type="text" class="form-control" placeholder="Designation" required="required"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="keelsEmail">Email address</label>
+                                            <asp:TextBox ID="TextBox5" runat="server" type="email" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label for="keelsMobile">Mobile</label>
+                                            <asp:TextBox ID="TextBox6" runat="server" type="number" class="form-control" placeholder="Mobile" required="required"></asp:TextBox>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
                                         <div class="col-md-6 mb-3">
-                                            <label for="validationDefault03">City</label>
-                                            <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+                                            <label for="keelsCity">City</label>
+                                            <asp:TextBox ID="TextBox7" runat="server" type="text" class="form-control" placeholder="City" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-3 mb-3">
-                                            <label for="validationDefault04">State</label>
-                                            <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+                                            <label for="keelsState">State</label>
+                                            <asp:TextBox ID="TextBox8" runat="server" type="text" class="form-control" placeholder="State" required="required"></asp:TextBox>
                                         </div>
                                         <div class="col-md-3 mb-3">
-                                            <label for="validationDefault05">Zip</label>
-                                            <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+                                            <label for="keelsZip">Zip</label>
+                                            <asp:TextBox ID="TextBox9" runat="server" type="text" class="form-control" placeholder="Zip" required="required"></asp:TextBox>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                                            <label class="form-check-label" for="invalidCheck2">
-                                                Agree to terms and conditions
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                    <asp:Button ID="Button1" runat="server" Text="Create account" class="btn btn-primary" style="margin-top: 10px;" />
                                 </section>
                             </div>
                         </div>
