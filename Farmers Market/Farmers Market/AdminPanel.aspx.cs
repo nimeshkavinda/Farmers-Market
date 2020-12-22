@@ -22,6 +22,7 @@ namespace Farmers_Market
                 userControls.Visible = false;
                 PlaceHolder userAvatar = (PlaceHolder)Master.FindControl("userAvatar");
                 userAvatar.Visible = true;
+                loggedInWebMaster.Text = Session["webmaster"].ToString();
             }
         }
     }
