@@ -25,7 +25,7 @@
                                             <asp:TextBox runat="server" class="form-control form-control-user" type="password" ID="txtKeelsPassword" placeholder="Password" ValidationGroup="keelsLoginForm"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="validateTxtKeelsPassword" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="keelsLoginForm" ControlToValidate="txtKeelsPassword"></asp:RequiredFieldValidator>
                                         </div>
-                                        <asp:Button ID="btnDoaLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" ValidationGroup="keelsLoginForm"/>
+                                        <asp:Button ID="btnDoaLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" ValidationGroup="keelsLoginForm" OnClick="btnDoaLogin_Click"/>
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
