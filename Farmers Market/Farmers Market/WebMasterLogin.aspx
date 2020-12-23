@@ -18,12 +18,15 @@
                                     </div>
                                     <div class="user">
                                         <div class="form-group">
-                                            <asp:TextBox runat="server" class="form-control form-control-user" type="text" id="txtWebMasterUsername" placeholder="Username" name="username" required="required"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control form-control-user" type="text" id="txtWebMasterUsername" placeholder="Username" name="username"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateUsername" runat="server" ErrorMessage="Required" ControlToValidate="txtWebMasterUsername" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
-                                            <asp:TextBox runat="server" class="form-control form-control-user" type="password" id="txtWebMasterPassword" placeholder="Password" name="password" required="required"></asp:TextBox>
+                                            <asp:TextBox runat="server" class="form-control form-control-user" type="password" id="txtWebMasterPassword" placeholder="Password" name="password"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validatePassword" runat="server" ErrorMessage="Required" ControlToValidate="txtWebMasterPassword" ForeColor="Red"></asp:RequiredFieldValidator>
                                         </div>
-                                        <asp:Button ID="webMasterLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" OnClick="webMasterLogin_Click" />
+                                        <asp:Button ID="webMasterLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" OnClick="webMasterLogin_Click"/>
+                                        <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
                             </div>

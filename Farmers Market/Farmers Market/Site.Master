@@ -118,7 +118,7 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li><a class="dropdown-item">
-                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" /></a></li>
+                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" causesvalidation="false" /></a></li>
                                     </ul>
                                 </li>
                             </ul>
