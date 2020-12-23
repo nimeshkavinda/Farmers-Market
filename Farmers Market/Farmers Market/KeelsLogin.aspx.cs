@@ -52,7 +52,5 @@ namespace Farmers_Market
             }
 
         }
-
-    }
     }
 }

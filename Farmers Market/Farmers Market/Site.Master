@@ -62,7 +62,7 @@
                 <!-- Container wrapper -->
                 <div class="container">
                     <!-- Navbar brand -->
-                    <a class="navbar-brand" runat="server" href="~/">Farmers Market</a>
+                    <a class="navbar-brand" runat="server" href="~/">Farmer's Market</a>
 
                     <!-- Toggle button -->
                     <button
@@ -149,7 +149,7 @@
             </nav>
             <!-- Navbar -->
         </header>
-
+        <div id="map" style="width: 100%"></div>
         <!--Content-->
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
