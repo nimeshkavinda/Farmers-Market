@@ -11,71 +11,53 @@ namespace Farmers_Market
 {
 
 
-    public partial class WebForm4
+    public partial class WebForm5
     {
 
         /// <summary>
-        /// txtFarmerEmail control.
+        /// txtDoaUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtDoaUsername;
 
         /// <summary>
-        /// validateTxtFarmerEmail control.
+        /// validateTxtDoaUsername control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateTxtFarmerEmail;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateTxtDoaUsername;
 
         /// <summary>
-        /// validateTxtFarmerEmailFormat control.
+        /// txtDoaPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator validateTxtFarmerEmailFormat;
+        protected global::System.Web.UI.WebControls.TextBox txtDoaPassword;
 
         /// <summary>
-        /// txtFarmerPassword control.
+        /// validateTxtDoaPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerPassword;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateTxtDoaPassword;
 
         /// <summary>
-        /// validateTxtFarmerPassword control.
+        /// btnDoaLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateTxtFarmerPassword;
-
-        /// <summary>
-        /// btnFarmerLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnFarmerLogin;
-
-        /// <summary>
-        /// linkLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkLogin;
+        protected global::System.Web.UI.WebControls.Button btnDoaLogin;
 
         /// <summary>
         /// lblError control.

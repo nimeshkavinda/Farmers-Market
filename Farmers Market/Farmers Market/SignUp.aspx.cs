@@ -20,52 +20,55 @@ namespace Farmers_Market
         protected void btnFarmerAccount_Click(object sender, EventArgs e)
         {
 
-            //string username = doaUsername.Text;
-            //string fname = doaFName.Text;
-            //string lname = doaLName.Text;
-            //string designation = doaDesignation.Text;
-            //string email = doaEmail.Text;
-            //string mobile = doaMobile.Text;
-            //string city = doaCity.Text;
-            //string state = doaState.Text;
-            //string zip = doaState.Text;
-            //string password = fname + mobile;
+            string fname = farmerFName.Text;
+            string lname = farmerLName.Text;
+            string email = farmerEmail.Text;
+            string password = farmerPassword.Text;
+            string nic = farmerNic.Text;
+            string mobile = farmerMobile.Text;
+            string city = farmerCity.Text;
+            string state = farmerState.Text;
+            string zip = farmerZip.Text;
+            string gender = farmerGender.SelectedValue;
+            string dob = farmerDob.Text;
 
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
-            //String qry = "INSERT INTO Farmer VALUES ('" + username + "','" + password + "','" + fname + "','" + lname + "','" + designation + "','" + email + "','" + mobile + "','" + city + "','" + state + "','" + zip + "')";
-            //SqlCommand cmd = new SqlCommand(qry, con);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "INSERT INTO Farmer VALUES ('" + email + "','" + password + "','" + fname + "','" + lname + "','" + gender + "','" + dob + "','" + nic + "','" + mobile + "','" + city + "','" + state + "','" + zip + "')";
+            SqlCommand cmd = new SqlCommand(qry, con);
 
-            //try
-            //{
-            //    con.Open();
-            //    cmd.ExecuteNonQuery();
-            //    Response.Write("<script>alert('Account has been registered. You'll be redirected to login');</script>");
-            //}
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                Response.Write("<script>alert('Registration successful. Please log in');</script>");
+            }
 
-            //catch (SqlException ex)
-            //{
+            catch (SqlException ex)
+            {
 
-            //    if (ex.Number == 2627)
-            //    {
+                if (ex.Number == 2627)
+                {
 
-            //        Response.Write("<script>alert('The email you entered is already being used');</script>");
+                    Response.Write("<script>alert('The email you entered is already being used');</script>");
 
-            //    }
+                }
 
-            //}
-            //finally
-            //{
-            //    con.Close();
-            //    doaUsername.Text = "";
-            //    doaFName.Text = "";
-            //    doaLName.Text = "";
-            //    doaDesignation.Text = "";
-            //    doaEmail.Text = "";
-            //    doaMobile.Text = "";
-            //    doaCity.Text = "";
-            //    doaState.Text = "";
-            //    doaZip.Text = "";
-            //}
+            }
+            finally
+            {
+                con.Close();
+                farmerFName.Text = "";
+                farmerLName.Text = "";
+                farmerEmail.Text = "";
+                farmerPassword.Text = "";
+                farmerNic.Text = "";
+                farmerMobile.Text = "";
+                farmerCity.Text = "";
+                farmerState.Text = "";
+                farmerZip.Text = "";
+                farmerGender.ClearSelection();
+                farmerDob.Text = "";
+            }
 
         }
     }

@@ -177,6 +177,8 @@
     <Content Include="AdminPanel.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="FarmerLogin.aspx" />
+    <Content Include="DoaLogin.aspx" />
+    <Content Include="KeelsLogin.aspx" />
     <Content Include="WebMasterLogin.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
@@ -360,6 +362,20 @@
     </Compile>
     <Compile Include="FarmerLogin.aspx.designer.cs">
       <DependentUpon>FarmerLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DoaLogin.aspx.cs">
+      <DependentUpon>DoaLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DoaLogin.aspx.designer.cs">
+      <DependentUpon>DoaLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KeelsLogin.aspx.cs">
+      <DependentUpon>KeelsLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KeelsLogin.aspx.designer.cs">
+      <DependentUpon>KeelsLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMasterLogin.aspx.cs">
       <DependentUpon>WebMasterLogin.aspx</DependentUpon>

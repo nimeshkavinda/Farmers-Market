@@ -20,7 +20,7 @@ namespace Farmers_Market
         protected void webMasterLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
-            String qry = "Select * from WebMaster where Username='" + txtWebMasterUsername.Text + "' and Password='" + txtWebMasterPassword.Text + "'";
+            String qry = "SELECT * FROM WebMaster WHERE Username='" + txtWebMasterUsername.Text + "' AND Password='" + txtWebMasterPassword.Text + "'";
             SqlDataAdapter sda = new SqlDataAdapter(qry, con);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
@@ -41,7 +41,7 @@ namespace Farmers_Market
 
             catch (Exception ex)
             {
-                
+                lblError.Text = ex.ToString();
             }
 
             finally
