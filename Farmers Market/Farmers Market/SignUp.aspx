@@ -12,7 +12,7 @@
                                 <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;assets/farmerreg.jpg&quot;);"></div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="p-5" style="margin-top: 30px; margin-bottom: 30px;">
+                                <div class="p-5" style="margin-top: 40px; margin-bottom: 40px;">
                                     <div class="text-left">
                                         <h4 class="text-dark mb-4">Register as a Farmer</h4>
                                     </div>
@@ -49,22 +49,39 @@
                                             </div>
                                         </div>
                                         <div class="text-left">
-                                            <h5 class="mb-4">Identification and contact information</h5>
+                                            <h5 class="mb-4">Account information</h5>
                                             <hr />
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-8 mb-4">
-                                                <label for="farmerNic">National identity card</label>
-                                                <asp:TextBox ID="farmerNic" runat="server" type="text" class="form-control" placeholder="NIC" ValidationGroup="signupForm"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="validateFarmerNic" runat="server" ErrorMessage="Required" ControlToValidate="farmerNic" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
                                                 <label for="farmerEmail">Email address</label>
                                                 <asp:TextBox ID="farmerEmail" runat="server" type="email" class="form-control" placeholder="Email address" ValidationGroup="signupForm"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="validateFarmerEmail" runat="server" ErrorMessage="Required" ControlToValidate="farmerEmail" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
                                                 <asp:RegularExpressionValidator ID="validateFarmerEmailFormat" runat="server" ErrorMessage="Invalid email" ForeColor="Red" ControlToValidate="farmerEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ValidationGroup="signupForm"></asp:RegularExpressionValidator>
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="farmerPassword">Password</label>
+                                                <asp:TextBox ID="farmerPassword" runat="server" type="password" class="form-control" placeholder="Password" ValidationGroup="signupForm"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateFarmerPassword" runat="server" ErrorMessage="Required" ControlToValidate="farmerState" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <label for="farmerConPassword">Confirm password</label>
+                                                <asp:TextBox ID="farmerConPassword" runat="server" type="password" class="form-control" placeholder="Confirm password" ValidationGroup="signupForm"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateFarmerConPassword" runat="server" ErrorMessage="Required" ControlToValidate="farmerZip" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
+                                            </div>
+                                            <asp:CompareValidator ID="compareFarmerPasswords" runat="server" style="margin-bottom: 10px;" ErrorMessage="Make sure the passwords match" ForeColor="Red" ValidationGroup="signupForm" ControlToCompare="farmerConPassword" ControlToValidate="farmerPassword"></asp:CompareValidator>
+                                        </div>
+                                        <div class="text-left">
+                                            <h5 class="mb-4">Contact information</h5>
+                                            <hr />
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col-md-6 mb-3">
+                                                <label for="farmerNic">National identity card</label>
+                                                <asp:TextBox ID="farmerNic" runat="server" type="text" class="form-control" placeholder="NIC" ValidationGroup="signupForm"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="validateFarmerNic" runat="server" ErrorMessage="Required" ControlToValidate="farmerNic" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <label for="farmerMobile">Mobile</label>
