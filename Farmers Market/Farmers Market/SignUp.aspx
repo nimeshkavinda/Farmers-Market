@@ -71,7 +71,7 @@
                                                 <asp:TextBox ID="farmerConPassword" runat="server" type="password" class="form-control" placeholder="Confirm password" ValidationGroup="signupForm"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="validateFarmerConPassword" runat="server" ErrorMessage="Required" ControlToValidate="farmerZip" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
                                             </div>
-                                            <asp:CompareValidator ID="compareFarmerPasswords" runat="server" style="margin-bottom: 10px;" ErrorMessage="Make sure the passwords match" ForeColor="Red" ValidationGroup="signupForm" ControlToCompare="farmerConPassword" ControlToValidate="farmerPassword"></asp:CompareValidator>
+                                            <asp:CompareValidator ID="compareFarmerPasswords" runat="server" Style="margin-bottom: 10px;" ErrorMessage="Make sure the passwords match" ForeColor="Red" ValidationGroup="signupForm" ControlToCompare="farmerConPassword" ControlToValidate="farmerPassword"></asp:CompareValidator>
                                         </div>
                                         <div class="text-left">
                                             <h5 class="mb-4">Contact information</h5>
@@ -107,7 +107,9 @@
                                             </div>
                                         </div>
                                         <asp:Button ID="btnFarmerAccount" runat="server" Text="Register" class="btn btn-primary" ValidationGroup="signupForm" OnClick="btnFarmerAccount_Click" />
-                                        <label style="margin-left:20px;">Already a member? <asp:HyperLink ID="linkLogin" href="~/" runat="server">Log in</asp:HyperLink></label>
+                                        <label style="margin-left: 20px;">Already a member?
+                                            <asp:HyperLink ID="linkLogin" href="FarmerLogin" runat="server">Log in</asp:HyperLink></label>
+                                        <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
                             </div>

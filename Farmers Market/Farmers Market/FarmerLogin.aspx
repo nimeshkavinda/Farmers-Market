@@ -27,6 +27,7 @@
                                             <asp:RequiredFieldValidator ID="validateTxtFarmerPassword" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="farmerLoginForm" ControlToValidate="txtFarmerPassword"></asp:RequiredFieldValidator>
                                         </div>
                                         <asp:Button ID="btnFarmerLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" ValidationGroup="farmerLoginForm" OnClick="btnFarmerLogin_Click" />
+                                        <label style="margin-top:10px;">Don't have an account? <asp:HyperLink ID="linkLogin" href="SignUp" runat="server">Sign Up</asp:HyperLink></label>
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
