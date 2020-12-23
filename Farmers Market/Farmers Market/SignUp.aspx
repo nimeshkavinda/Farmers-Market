@@ -12,9 +12,13 @@
                                 <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;assets/farmerreg.jpg&quot;);"></div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="p-5" style="margin-top: 60px; margin-bottom: 60px;">
+                                <div class="p-5" style="margin-top: 30px; margin-bottom: 30px;">
                                     <div class="text-left">
                                         <h4 class="text-dark mb-4">Register as a Farmer</h4>
+                                    </div>
+                                    <div class="text-left">
+                                        <h5 class="mb-4">Personal information</h5>
+                                        <hr />
                                     </div>
                                     <div class="signupForm">
                                         <div class="form-row">
@@ -43,6 +47,10 @@
                                                 <asp:TextBox ID="farmerDob" runat="server" ValidationGroup="signupForm" TextMode="Date"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="validateFarmerDob" runat="server" ErrorMessage="Required" ControlToValidate="farmerDob" ForeColor="Red" ValidationGroup="signupForm"></asp:RequiredFieldValidator>
                                             </div>
+                                        </div>
+                                        <div class="text-left">
+                                            <h5 class="mb-4">Identification and contact information</h5>
+                                            <hr />
                                         </div>
                                         <div class="form-row">
                                             <div class="col-md-8 mb-4">
@@ -82,6 +90,7 @@
                                             </div>
                                         </div>
                                         <asp:Button ID="btnFarmerAccount" runat="server" Text="Register" class="btn btn-primary" ValidationGroup="signupForm" OnClick="btnFarmerAccount_Click" />
+                                        <label style="margin-left:20px;">Already a member? <asp:HyperLink ID="linkLogin" href="~/" runat="server">Log in</asp:HyperLink></label>
                                     </div>
                                 </div>
                             </div>
