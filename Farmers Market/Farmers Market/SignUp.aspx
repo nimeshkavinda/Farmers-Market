@@ -108,7 +108,7 @@
                                         </div>
                                         <asp:Button ID="btnFarmerAccount" runat="server" Text="Register" class="btn btn-primary" ValidationGroup="signupForm" OnClick="btnFarmerAccount_Click" />
                                         <label style="margin-left: 20px;">Already a member?
-                                            <asp:HyperLink ID="linkLogin" href="FarmerLogin" runat="server">Log in</asp:HyperLink></label>
+                                            <asp:HyperLink ID="linkLogin" href="FarmerLogin" runat="server">Log in</asp:HyperLink></label><br />
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>

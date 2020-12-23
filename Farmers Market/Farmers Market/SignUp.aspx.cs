@@ -40,7 +40,7 @@ namespace Farmers_Market
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                Response.Write("<script>alert('Account has been registered. Please log in');</script>");
+                Response.Write("<script>alert('Registration successful. Please log in');</script>");
             }
 
             catch (SqlException ex)
