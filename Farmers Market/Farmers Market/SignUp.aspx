@@ -12,7 +12,7 @@
                                 <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;assets/farmerreg.jpg&quot;);"></div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="p-5" style="margin-top: 30px; margin-bottom: 30px;">
+                                <div class="p-5" style="margin-top: 40px; margin-bottom: 40px;">
                                     <div class="text-left">
                                         <h4 class="text-dark mb-4">Register as a Farmer</h4>
                                     </div>
