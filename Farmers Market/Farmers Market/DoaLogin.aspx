@@ -25,7 +25,7 @@
                                             <asp:TextBox runat="server" class="form-control form-control-user" type="password" ID="txtDoaPassword" placeholder="Password" ValidationGroup="doaLoginForm"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="validateTxtDoaPassword" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="doaLoginForm" ControlToValidate="txtDoaPassword"></asp:RequiredFieldValidator>
                                         </div>
-                                        <asp:Button ID="btnDoaLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" ValidationGroup="doaLoginForm"/>
+                                        <asp:Button ID="btnDoaLogin" runat="server" class="btn btn-primary btn-block text-white btn-user" Text="Login" style="margin-bottom: 15px;" ValidationGroup="doaLoginForm" OnClick="btnDoaLogin_Click"/>
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
                                     </div>
                                 </div>
