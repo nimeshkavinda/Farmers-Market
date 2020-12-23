@@ -87,24 +87,6 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validateFarmerDob;
 
         /// <summary>
-        /// farmerNic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox farmerNic;
-
-        /// <summary>
-        /// validateFarmerNic control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateFarmerNic;
-
-        /// <summary>
         /// farmerEmail control.
         /// </summary>
         /// <remarks>
@@ -130,6 +112,69 @@ namespace Farmers_Market
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator validateFarmerEmailFormat;
+
+        /// <summary>
+        /// farmerPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox farmerPassword;
+
+        /// <summary>
+        /// validateFarmerPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateFarmerPassword;
+
+        /// <summary>
+        /// farmerConPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox farmerConPassword;
+
+        /// <summary>
+        /// validateFarmerConPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateFarmerConPassword;
+
+        /// <summary>
+        /// compareFarmerPasswords control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator compareFarmerPasswords;
+
+        /// <summary>
+        /// farmerNic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox farmerNic;
+
+        /// <summary>
+        /// validateFarmerNic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateFarmerNic;
 
         /// <summary>
         /// farmerMobile control.
