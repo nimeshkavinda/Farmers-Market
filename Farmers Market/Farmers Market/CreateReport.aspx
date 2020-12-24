@@ -34,26 +34,30 @@
                                     <div class="createReportForm">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">Title</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Give a proper title to your report">
+                                            <asp:TextBox ID="reportTitle" runat="server" type="text" class="form-control" placeholder="Give a proper title to your report" ValidationGroup="createReportForm"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateReportTitle" runat="server" ErrorMessage="Required" ControlToValidate="reportTitle" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Harvest type</label>
-                                            <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>Fruit</option>
-                                                <option>vegetable</option>
-                                            </select>
+                                            <label for="reportType">Harvest type</label>
+                                            <asp:DropDownList ID="reportType" runat="server">
+                                                <asp:ListItem Enabled="true" Text="Fruit" Value="Fruit"></asp:ListItem>
+                                                <asp:ListItem Text="Vegetable" Value="Vegetable"></asp:ListItem>
+                                            </asp:DropDownList>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Description</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <label for="reportDesc">Description</label>
+                                            <asp:TextBox ID="reportDesc" runat="server" type="text" class="form-control" placeholder="A good description attracts more buyers" ValidationGroup="createReportForm" TextMode="MultiLine"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateReportDesc" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="createReportForm" ControlToValidate="reportDesc"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlInput1">Price</label>
-                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pick a good price">
+                                            <label for="reportPrice">Price</label>
+                                            <asp:TextBox ID="reportPrice" runat="server" type="number" class="form-control" placeholder="Pick a good price" ValidationGroup="createReportForm"></asp:TextBox>
+                                            <asp:RequiredFieldValidator ID="validateReportPrice" runat="server" ErrorMessage="Required" ControlToValidate="reportPrice" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group" style="margin-bottom: 40px;">
-                                            <label for="exampleFormControlFile1">Upload a photo</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            <label for="reportPhoto">Upload a photo</label><br />
+                                            <asp:FileUpload ID="reportPhoto" runat="server" />
+                                            <asp:RequiredFieldValidator ID="validateReportPhoto" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="createReportForm" ControlToValidate="reportPhoto"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="text-left">
                                             <h4 class="text-dark mb-4">Contact details</h4>
