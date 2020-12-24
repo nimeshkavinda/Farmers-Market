@@ -95,19 +95,39 @@
                             </div>
                             <div class="col-lg-6 d-none d-lg-flex">
 
-                                <div id="googleMap" style="width: 100%;"></div>
-
                                 <script>
-                                    function myMap() {
-                                        var mapProp = {
-                                            center: new google.maps.LatLng(51.508742, -0.120850),
-                                            zoom: 5,
-                                        };
-                                        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                                    var map;
+                                    function initialize() {
+                                        var myLatlng = new google.maps.LatLng(6.8433, 80.0032);
+                                        var myOptions = {
+                                            zoom: 11,
+                                            center: myLatlng,
+                                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                                        }
+                                        map = new google.maps.Map(document.getElementById("googleMap"), myOptions);
+                                        // marker refers to a global variable
+                                        marker = new google.maps.Marker({
+                                            position: myLatlng,
+                                            map: map,
+                                            draggable: true
+                                        });
+
+                                        google.maps.event.addListener(marker, "dragend", function (event) {
+                                            // get lat/ lng of marker
+                                            var markerLat = event.latLng.lat();
+                                            var markerLng = event.latLng.lng();
+
+                                            // get Lat/ Lng in the txtbox
+                                            document.getElementById("reportLat").value = markerLat.toFixed(5);
+                                            document.getElementById("reportLng").value = markerLng.toFixed(5);
+
+                                        });
                                     }
+
+                                    window.onload = function () { initialize() };
                                 </script>
 
-                                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyPRijM0WrNsgs5v4-aiyAmM5n9yi45n4&callback=myMap"></script>
+                                <div id="googleMap" style="width: 100%;"></div>
 
                             </div>
                         </div>

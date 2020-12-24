@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Farmers_Market.SiteMaster" %>
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Farmers_Market.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -32,6 +32,9 @@
     <script
         type="text/javascript"
         src="Scripts/mdb.min.js"></script>
+
+    <!--GoogleMapAPI-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyPRijM0WrNsgs5v4-aiyAmM5n9yi45n4&callback=myMap"></script>
 
 </head>
 <body>
@@ -121,7 +124,7 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li><a class="dropdown-item">
-                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" causesvalidation="false" /></a></li>
+                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" CausesValidation="false" /></a></li>
                                     </ul>
                                 </li>
                             </ul>
