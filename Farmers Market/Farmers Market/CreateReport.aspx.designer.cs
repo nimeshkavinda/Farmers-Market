@@ -42,6 +42,51 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.DropDownList reportType;
 
         /// <summary>
+        /// validateReportForm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateReportForm;
+
+        /// <summary>
+        /// reportLat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox reportLat;
+
+        /// <summary>
+        /// validateReportLat control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateReportLat;
+
+        /// <summary>
+        /// reportLng control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox reportLng;
+
+        /// <summary>
+        /// validateReportLng control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateReportLng;
+
+        /// <summary>
         /// reportDesc control.
         /// </summary>
         /// <remarks>

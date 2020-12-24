@@ -38,11 +38,25 @@
                                             <asp:RequiredFieldValidator ID="validateReportTitle" runat="server" ErrorMessage="Required" ControlToValidate="reportTitle" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
-                                            <label for="reportType">Harvest type</label>
-                                            <asp:DropDownList ID="reportType" runat="server">
-                                                <asp:ListItem Enabled="true" Text="Fruit" Value="Fruit"></asp:ListItem>
+                                            <label for="reportType">Harvest type&nbsp;</label>
+                                            <asp:DropDownList ID="reportType" runat="server" Height="2em" ValidationGroup="reportForm">
+                                                <asp:ListItem Enabled="true" Text="Fruit" Value="Fruit" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="Vegetable" Value="Vegetable"></asp:ListItem>
                                             </asp:DropDownList>
+                                            <asp:RequiredFieldValidator ID="validateReportForm" runat="server" ErrorMessage="Required" ControlToValidate="reportType" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Location (Use map to get the location)</label><br />
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <asp:TextBox ID="reportLat" runat="server" type="text" class="form-control" placeholder="Latitude" ValidationGroup="createReportForm"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="validateReportLat" runat="server" ErrorMessage="Required" ControlToValidate="reportLat" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <asp:TextBox ID="reportLng" runat="server" type="text" class="form-control" placeholder="Longitude" ValidationGroup="createReportForm"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="validateReportLng" runat="server" ErrorMessage="Required" ControlToValidate="reportLng" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <label for="reportDesc">Description</label>
