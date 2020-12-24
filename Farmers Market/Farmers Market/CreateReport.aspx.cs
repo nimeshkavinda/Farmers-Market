@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Farmers_Market
 {
@@ -45,6 +46,55 @@ namespace Farmers_Market
 
                 Response.Redirect("~/FarmerLogin");
 
+            }
+
+        }
+
+        protected void btnCreateReport_Click(object sender, EventArgs e)
+        {
+
+            string title = reportTitle.Text;
+            string harvestType = reportType.SelectedItem.Value;
+            string lat = reportLat.Text;
+            string lng = reportLng.Text;
+            string desc = reportDesc.Text;
+            string price = reportPrice.Text;
+            string email = Session["farmer"].ToString();
+
+            HttpPostedFile postedFile = reportPhoto.PostedFile;
+            string filename = Path.GetFileName(postedFile.FileName);
+            string fileExtension = Path.GetExtension(filename);
+            int fileSize = postedFile.ContentLength;
+
+            Stream stream = postedFile.InputStream;
+            BinaryReader binaryReader = new BinaryReader(stream);
+            Byte[] img = binaryReader.ReadBytes((int)stream.Length);
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "','"+ img + "','" + email + "')";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                lblSuccess.Text = "Report has been created";
+            }
+
+            catch (SqlException ex)
+            {
+
+                lblError.Text = "Failed to create the report";
+
+            }
+            finally
+            {
+                con.Close();
+                reportTitle.Text = "";
+                reportLat.Text = "";
+                reportLng.Text = "";
+                reportDesc.Text = "";
+                reportPrice.Text = "";
             }
 
         }
