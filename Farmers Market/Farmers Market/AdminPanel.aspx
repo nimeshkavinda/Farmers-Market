@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron" style="margin-bottom: 50px;">
+    <div class="jumbotron" style="margin-top:25px; margin-bottom: 50px;">
         <div class="container">
             <h1 class="display-6">Welcome,
                 <asp:Label ID="loggedInWebMaster" runat="server" Text=""></asp:Label></h1>

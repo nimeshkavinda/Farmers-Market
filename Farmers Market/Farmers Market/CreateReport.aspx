@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="form-group" style="margin-bottom: 40px;">
                                             <label for="reportPhoto">Upload a photo</label><br />
-                                            <asp:FileUpload ID="reportPhoto" runat="server" />
+                                            <asp:FileUpload ID="reportPhoto" runat="server" accept=".jpg" />
                                             <asp:RequiredFieldValidator ID="validateReportPhoto" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="createReportForm" ControlToValidate="reportPhoto"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="text-left">
@@ -79,15 +79,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Name</label><br />
-                                            <asp:Label ID="lblName" runat="server" Text="Nimesh Kavinda"></asp:Label>
+                                            <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Email</label><br />
-                                            <asp:Label ID="lblEmail" runat="server" Text="nimeshkavinda13@gmail.com"></asp:Label>
+                                            <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Mobile</label><br />
-                                            <asp:Label ID="lblMobile" runat="server" Text="0716956139"></asp:Label>
+                                            <asp:Label ID="lblMobile" runat="server" Text=""></asp:Label>
                                         </div>
                                         <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" />
                                     </div>
@@ -98,9 +98,9 @@
                                 <script>
                                     var map;
                                     function initialize() {
-                                        var myLatlng = new google.maps.LatLng(6.8433, 80.0032);
+                                        var myLatlng = new google.maps.LatLng(6.9271, 79.8612);
                                         var myOptions = {
-                                            zoom: 11,
+                                            zoom: 12,
                                             center: myLatlng,
                                             mapTypeId: google.maps.MapTypeId.ROADMAP
                                         }
@@ -118,8 +118,8 @@
                                             var markerLng = event.latLng.lng();
 
                                             // get Lat/ Lng in the txtbox
-                                            document.getElementById("reportLat").value = markerLat.toFixed(5);
-                                            document.getElementById("reportLng").value = markerLng.toFixed(5);
+                                            document.getElementById("<%=reportLat.ClientID%>").value = markerLat.toFixed(5);
+                                            document.getElementById("<%=reportLng.ClientID%>").value = markerLng.toFixed(5);
 
                                         });
                                     }
