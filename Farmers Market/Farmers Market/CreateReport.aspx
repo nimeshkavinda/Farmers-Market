@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="form-group" style="margin-bottom: 40px;">
                                             <label for="reportPhoto">Upload a photo</label><br />
-                                            <asp:FileUpload ID="reportPhoto" runat="server" />
+                                            <asp:FileUpload ID="reportPhoto" runat="server" accept=".jpg" />
                                             <asp:RequiredFieldValidator ID="validateReportPhoto" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="createReportForm" ControlToValidate="reportPhoto"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="text-left">
