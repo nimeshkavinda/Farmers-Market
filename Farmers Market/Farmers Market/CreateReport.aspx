@@ -79,15 +79,15 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Name</label><br />
-                                            <asp:Label ID="lblName" runat="server" Text="Nimesh Kavinda"></asp:Label>
+                                            <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Email</label><br />
-                                            <asp:Label ID="lblEmail" runat="server" Text="nimeshkavinda13@gmail.com"></asp:Label>
+                                            <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Mobile</label><br />
-                                            <asp:Label ID="lblMobile" runat="server" Text="0716956139"></asp:Label>
+                                            <asp:Label ID="lblMobile" runat="server" Text=""></asp:Label>
                                         </div>
                                         <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" />
                                     </div>

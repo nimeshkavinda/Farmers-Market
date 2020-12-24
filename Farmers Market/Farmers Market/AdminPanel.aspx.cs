@@ -27,6 +27,12 @@ namespace Farmers_Market
                 userAvatar.Visible = true;
                 loggedInWebMaster.Text = Session["webmaster"].ToString();
             }
+            else
+            {
+
+                Response.Redirect("~/WebMasterLogin");
+
+            }
         }
 
         protected void btnDoaAccount_Click(object sender, EventArgs e)
