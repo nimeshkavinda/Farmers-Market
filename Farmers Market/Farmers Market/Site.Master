@@ -34,7 +34,7 @@
         src="Scripts/mdb.min.js"></script>
 
     <!--GoogleMapAPI-->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyPRijM0WrNsgs5v4-aiyAmM5n9yi45n4&callback=myMap"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFb4ebCaXgIKAzNopg8pVHCNEu7l8qp7o&callback=myMap"></script>
 
 </head>
 <body>

@@ -98,9 +98,9 @@
                                 <script>
                                     var map;
                                     function initialize() {
-                                        var myLatlng = new google.maps.LatLng(6.8433, 80.0032);
+                                        var myLatlng = new google.maps.LatLng(6.9271, 79.8612);
                                         var myOptions = {
-                                            zoom: 11,
+                                            zoom: 12,
                                             center: myLatlng,
                                             mapTypeId: google.maps.MapTypeId.ROADMAP
                                         }
@@ -118,8 +118,8 @@
                                             var markerLng = event.latLng.lng();
 
                                             // get Lat/ Lng in the txtbox
-                                            document.getElementById("reportLat").value = markerLat.toFixed(5);
-                                            document.getElementById("reportLng").value = markerLng.toFixed(5);
+                                            document.getElementById("<%=reportLat.ClientID%>").value = markerLat.toFixed(5);
+                                            document.getElementById("<%=reportLng.ClientID%>").value = markerLng.toFixed(5);
 
                                         });
                                     }
