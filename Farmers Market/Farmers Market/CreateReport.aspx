@@ -26,39 +26,52 @@
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-lg-6">
-                                <div class="p-5" style="margin-top: 60px; margin-bottom: 60px;">
+                                <div class="p-5" style="margin-top: 20px; margin-bottom: 20px;">
                                     <div class="text-left">
-                                        <h4 class="text-dark mb-4">Create a Report</h4>
+                                        <h4 class="text-dark mb-4">Create a report</h4>
+                                        <hr />
                                     </div>
                                     <div class="createReportForm">
                                         <div class="form-group">
-                                            <label for="exampleFormControlInput1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                            <label for="exampleFormControlInput1">Title</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Give a proper title to your report">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlSelect1">Example select</label>
+                                            <label for="exampleFormControlSelect1">Harvest type</label>
                                             <select class="form-control" id="exampleFormControlSelect1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
+                                                <option>Fruit</option>
+                                                <option>vegetable</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleFormControlSelect2">Example multiple select</label>
-                                            <select multiple class="form-control" id="exampleFormControlSelect2">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Example textarea</label>
+                                            <label for="exampleFormControlTextarea1">Description</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlInput1">Price</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Pick a good price">
+                                        </div>
+                                        <div class="form-group" style="margin-bottom: 40px;">
+                                            <label for="exampleFormControlFile1">Upload a photo</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        </div>
+                                        <div class="text-left">
+                                            <h4 class="text-dark mb-4">Contact details</h4>
+                                            <hr />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Name</label><br />
+                                            <asp:Label ID="lblName" runat="server" Text="Nimesh Kavinda"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Email</label><br />
+                                            <asp:Label ID="lblEmail" runat="server" Text="nimeshkavinda13@gmail.com"></asp:Label>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Mobile</label><br />
+                                            <asp:Label ID="lblMobile" runat="server" Text="0716956139"></asp:Label>
+                                        </div>
+                                        <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" />
                                     </div>
                                 </div>
                             </div>
