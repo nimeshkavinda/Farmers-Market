@@ -28,13 +28,21 @@
                 window.setTimeout(function () { map.setZoom(pos); }, 3000);
             });
 
-            var infowindow = new google.maps.InfoWindow({
-                content: "Hello World!"
+            google.maps.event.addListener(map, 'click', function (event) {
+                placeMarker(map, event.latLng);
             });
 
-            google.maps.event.addListener(marker, 'click', function () {
+            function placeMarker(map, location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content: 'Latitude: ' + location.lat() +
+                        '<br>Longitude: ' + location.lng()
+                });
                 infowindow.open(map, marker);
-            });
+            }
 
             infowindow.open(map, marker);
         }
