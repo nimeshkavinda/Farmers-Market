@@ -20,9 +20,29 @@
                 map: map,
                 draggable: true
             });
-            var infowindow = new google.maps.InfoWindow({
-                content: "Testing"
+
+            google.maps.event.addListener(marker, 'click', function () {
+                var pos = map.getZoom();
+                map.setZoom(9);
+                map.setCenter(marker.getPosition());
+                window.setTimeout(function () { map.setZoom(pos); }, 3000);
             });
+
+            google.maps.event.addListener(map, 'click', function (event) {
+                placeMarker(map, event.latLng);
+            });
+
+            function placeMarker(map, location) {
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+                var infowindow = new google.maps.InfoWindow({
+                    content: 'Latitude: ' + location.lat() +
+                        '<br>Longitude: ' + location.lng()
+                });
+                infowindow.open(map, marker);
+            }
 
             infowindow.open(map, marker);
         }
