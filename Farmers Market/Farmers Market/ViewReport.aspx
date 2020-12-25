@@ -43,7 +43,7 @@
                         <asp:Parameter Name="ReportId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                <asp:GridView ID="gridViewReport" runat="server" AutoGenerateColumns="False" CellPadding="6"  CellSpacing="6" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="gridViewReport" runat="server" AutoGenerateColumns="False" CellPadding="18"  CellSpacing="18" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None" Width="100%">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
