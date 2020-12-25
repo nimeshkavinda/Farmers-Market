@@ -65,8 +65,6 @@ namespace Farmers_Market
             Stream stream = postedFile.InputStream;
             BinaryReader binaryReader = new BinaryReader(stream);
             Byte[] img = binaryReader.ReadBytes((Int32)stream.Length);
-            //string strBase64 = Convert.ToBase64String(img);
-            //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
             String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "',@pic,'" + email + "')";
@@ -97,15 +95,15 @@ namespace Farmers_Market
                 reportPrice.Text = "";
             }
 
-            String qry1 = "SELECT * FROM Report WHERE Email='" + Session["farmer"].ToString() + "'";
-            con.Open();
-            SqlCommand cmd1 = new SqlCommand(qry1);
-            cmd1.Connection = con;
-            SqlDataReader sdr = cmd1.ExecuteReader();
-            sdr.Read();
-            byte[] bytes = (byte[])sdr["Image"];
-            Image1.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
-            con.Close();
+            //String qry1 = "SELECT * FROM Report WHERE Email='" + Session["farmer"].ToString() + "'";
+            //con.Open();
+            //SqlCommand cmd1 = new SqlCommand(qry1);
+            //cmd1.Connection = con;
+            //SqlDataReader sdr = cmd1.ExecuteReader();
+            //sdr.Read();
+            //byte[] bytes = (byte[])sdr["Image"];
+            //Image1.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+            //con.Close();
 
         }
     }

@@ -124,7 +124,11 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li><a class="dropdown-item">
-                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" CausesValidation="false" /></a></li>
+                                            <asp:Button ID="btnViewReport" runat="server" BorderStyle="None" Style="background-color: transparent;" Text="Your Reports" CausesValidation="false" Visible="false" />
+                                        </a></li>
+                                        <li><a class="dropdown-item">
+                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" CausesValidation="false" />
+                                        </a></li>
                                     </ul>
                                 </li>
                             </ul>

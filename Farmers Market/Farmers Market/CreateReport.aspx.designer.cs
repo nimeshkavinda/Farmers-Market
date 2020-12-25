@@ -42,13 +42,13 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.DropDownList reportType;
 
         /// <summary>
-        /// validateReportForm control.
+        /// validateReportType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateReportForm;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateReportType;
 
         /// <summary>
         /// reportLat control.
@@ -193,14 +193,5 @@ namespace Farmers_Market
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblError;
-
-        /// <summary>
-        /// Image1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
     }
 }
