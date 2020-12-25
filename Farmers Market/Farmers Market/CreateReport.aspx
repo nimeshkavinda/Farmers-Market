@@ -97,6 +97,8 @@
                             </div>
                             <div class="col-lg-6 d-none d-lg-flex">
 
+                                <div id="googleMap" style="width: 100%;"></div>
+
                                 <script>
                                     var map;
                                     function initialize() {
@@ -128,8 +130,6 @@
 
                                     window.onload = function () { initialize() };
                                 </script>
-
-                                <div id="googleMap" style="width: 100%;"></div>
 
                             </div>
                         </div>
