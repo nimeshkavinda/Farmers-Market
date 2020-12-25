@@ -23,6 +23,7 @@ namespace Farmers_Market
                 userControls.Visible = false;
                 PlaceHolder userAvatar = (PlaceHolder)Master.FindControl("userAvatar");
                 userAvatar.Visible = true;
+                loggedInFarmerEmail.Value = Session["farmer"].ToString();
 
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
                 String qry = "SELECT * FROM Farmer WHERE Email='" + Session["farmer"].ToString() + "'";
@@ -41,6 +42,12 @@ namespace Farmers_Market
             {
 
                 Response.Redirect("~/FarmerLogin");
+
+            }
+
+            if (!IsPostBack)
+            {
+                SqlDataSourceReport.SelectCommand = "SELECT * FROM Report WHERE Email='"+Session["farmer"].ToString()+"'";
 
             }
 
