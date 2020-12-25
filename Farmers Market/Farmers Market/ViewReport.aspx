@@ -5,10 +5,12 @@
     <div class="container">
         <div class="row">
             <!-- Jumbotron -->
-            <div class="p-5 text-left">
-                <h1 class="mb-3">Sell your harvest without a hassle on Farmer's Market</h1>
-                <h4 class="mb-3">Project of Department of Agriculture in-collaboration with Keels</h4>
-                <a class="btn btn-primary" runat="server" href="~/ViewReport" role="button">See Your Reports</a>
+            <div class="jumbotron" style="margin-top: 25px; margin-bottom: 50px;">
+                <div class="container">
+                    <h1 class="display-6">Welcome,
+                <asp:Label ID="loggedInFarmer" runat="server" Text=""></asp:Label></h1>
+                    <p class="lead">Easily navigate through all your reports at one place.</p>
+                </div>
             </div>
             <!-- Jumbotron -->
         </div>
@@ -16,14 +18,14 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a runat="server" href="~/">Home</a></li>
-                    <li class="breadcrumb-item active">Create a Report</li>
+                    <li class="breadcrumb-item active">Profile</li>
+                    <li class="breadcrumb-item active">Your Reports</li>
                 </ol>
             </nav>
         </div>
         <div class="row justify-content-center">
-            <div class="col-md-12">
-
-                <asp:SqlDataSource ID="SqlDataSourceReport" runat="server" ConnectionString="<%$ ConnectionStrings:conString %>" DeleteCommand="DELETE FROM [Report] WHERE [ReportId] = @ReportId" InsertCommand="INSERT INTO [Report] ([Title], [HarvestType], [Description], [Price]) VALUES (@Title, @HarvestType, @Description, @Price)" SelectCommand="SELECT [ReportId], [Title], [HarvestType], [Description], [Price] FROM [Report]" UpdateCommand="UPDATE [Report] SET [Title] = @Title, [HarvestType] = @HarvestType, [Description] = @Description, [Price] = @Price WHERE [ReportId] = @ReportId">
+            <div class="col-md-12" style="margin-top: 10px; margin-bottom: 50px;">
+                <asp:SqlDataSource ID="SqlDataSourceReport" runat="server">
                     <DeleteParameters>
                         <asp:Parameter Name="ReportId" Type="Int32" />
                     </DeleteParameters>
@@ -41,25 +43,25 @@
                         <asp:Parameter Name="ReportId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None" Font-Names="Roboto">
+                <asp:GridView ID="gridViewReport" runat="server" AutoGenerateColumns="False" CellPadding="6"  CellSpacing="6" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:TemplateField HeaderText="Report ID" InsertVisible="False" SortExpression="ReportId">
                             <EditItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("ReportId") %>'></asp:Label>
+                                <asp:Label ID="lblReportId" runat="server" Text='<%# Eval("ReportId") %>'></asp:Label>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("ReportId") %>'></asp:Label>
+                                <asp:Label ID="lblReportId" runat="server" Text='<%# Bind("ReportId") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Title" SortExpression="Title">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="validateReportTitle" runat="server" ErrorMessage="*" ControlToValidate="TextBox1" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:TextBox ID="reportTitle" runat="server" Text='<%# Bind("Title") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="validateReportTitle" runat="server" ErrorMessage="*" ControlToValidate="reportTitle" ForeColor="Red"></asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Title") %>'></asp:Label>
+                                <asp:Label ID="lblReportTitle" runat="server" Text='<%# Bind("Title") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Harvest Type" SortExpression="HarvestType">
@@ -71,31 +73,31 @@
                                 <asp:RequiredFieldValidator ID="validateReportType" runat="server" ErrorMessage="*" ControlToValidate="reportType" ForeColor="Red"></asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("HarvestType") %>'></asp:Label>
+                                <asp:Label ID="lblReportType" runat="server" Text='<%# Bind("HarvestType") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Description" SortExpression="Description">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox3" runat="server" TextMode="MultiLine" Text='<%# Bind("Description") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="validateReportDesc" runat="server" ErrorMessage="*" ControlToValidate="TextBox3" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:TextBox ID="reportDesc" runat="server" TextMode="MultiLine" Text='<%# Bind("Description") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="validateReportDesc" runat="server" ErrorMessage="*" ControlToValidate="reportDesc" ForeColor="Red"></asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
+                                <asp:Label ID="lblDesc" runat="server" Text='<%# Bind("Description") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Price" SortExpression="Price">
                             <EditItemTemplate>
-                                <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="validateReportPrice" runat="server" ErrorMessage="*" ControlToValidate="TextBox4" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:TextBox ID="reportPrice" runat="server" Text='<%# Bind("Price") %>'></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="validateReportPrice" runat="server" ErrorMessage="*" ControlToValidate="reportPrice" ForeColor="Red"></asp:RequiredFieldValidator>
                             </EditItemTemplate>
                             <ItemTemplate>
-                                <asp:Label ID="Label5" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
+                                <asp:Label ID="lblReportPrice" runat="server" Text='<%# Bind("Price") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
-                    <EditRowStyle BackColor="#2461BF" />
+                    <EditRowStyle BackColor="#82B1FF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#1266F1" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
                     <RowStyle BackColor="#EFF3FB" />
                     <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
@@ -104,7 +106,6 @@
                     <SortedDescendingCellStyle BackColor="#E9EBEF" />
                     <SortedDescendingHeaderStyle BackColor="#4870BE" />
                 </asp:GridView>
-
             </div>
         </div>
     </div>
