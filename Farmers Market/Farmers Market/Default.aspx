@@ -20,9 +20,7 @@
                 map: map,
                 draggable: true
             });
-            var infowindow = new google.maps.InfoWindow({
-                content: "Testing"
-            });
+
             google.maps.event.addListener(marker, 'click', function () {
                 var pos = map.getZoom();
                 map.setZoom(9);
@@ -30,6 +28,13 @@
                 window.setTimeout(function () { map.setZoom(pos); }, 3000);
             });
 
+            var infowindow = new google.maps.InfoWindow({
+                content: "Hello World!"
+            });
+
+            google.maps.event.addListener(marker, 'click', function () {
+                infowindow.open(map, marker);
+            });
 
             infowindow.open(map, marker);
         }
