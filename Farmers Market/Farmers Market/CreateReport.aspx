@@ -16,7 +16,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a runat="server" href="~/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Create a Report</li>
+                    <li class="breadcrumb-item active">Create a Report</li>
                 </ol>
             </nav>
         </div>
@@ -89,7 +89,10 @@
                                             <label for="exampleFormControlTextarea1">Mobile</label><br />
                                             <asp:Label ID="lblMobile" runat="server" Text=""></asp:Label>
                                         </div>
-                                        <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" />
+                                        <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" OnClick="btnCreateReport_Click" />
+                                        <asp:Label ID="lblSuccess" runat="server" Text="" ForeColor="Green"></asp:Label>
+                                        <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
+                                        <asp:Image ID="Image1" runat="server" />
                                     </div>
                                 </div>
                             </div>

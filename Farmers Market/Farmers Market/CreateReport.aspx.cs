@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.IO;
 
 namespace Farmers_Market
 {
@@ -46,6 +47,65 @@ namespace Farmers_Market
                 Response.Redirect("~/FarmerLogin");
 
             }
+
+        }
+
+        protected void btnCreateReport_Click(object sender, EventArgs e)
+        {
+
+            string title = reportTitle.Text;
+            string harvestType = reportType.SelectedItem.Value;
+            string lat = reportLat.Text;
+            string lng = reportLng.Text;
+            string desc = reportDesc.Text;
+            string price = reportPrice.Text;
+            string email = Session["farmer"].ToString();
+
+            HttpPostedFile postedFile = reportPhoto.PostedFile;
+            Stream stream = postedFile.InputStream;
+            BinaryReader binaryReader = new BinaryReader(stream);
+            Byte[] img = binaryReader.ReadBytes((Int32)stream.Length);
+            //string strBase64 = Convert.ToBase64String(img);
+            //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "',@pic,'" + email + "')";
+            SqlCommand cmd = new SqlCommand(qry);
+            cmd.Parameters.AddWithValue("@pic", img);
+
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.ExecuteNonQuery();
+                lblSuccess.Text = "Report has been created";
+            }
+
+            catch (SqlException ex)
+            {
+
+                lblError.Text = "Failed to create the report";
+
+            }
+            finally
+            {
+                con.Close();
+                reportTitle.Text = "";
+                reportLat.Text = "";
+                reportLng.Text = "";
+                reportDesc.Text = "";
+                reportPrice.Text = "";
+            }
+
+            String qry1 = "SELECT * FROM Report WHERE Email='" + Session["farmer"].ToString() + "'";
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand(qry1);
+            cmd1.Connection = con;
+            SqlDataReader sdr = cmd1.ExecuteReader();
+            sdr.Read();
+            byte[] bytes = (byte[])sdr["Image"];
+            Image1.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+            con.Close();
 
         }
     }
