@@ -8,7 +8,7 @@
             <div class="p-5 text-left">
                 <h1 class="mb-3">Sell your harvest without a hassle on Farmer's Market</h1>
                 <h4 class="mb-3">Project of Department of Agriculture in-collaboration with Keels</h4>
-                <a class="btn btn-primary" runat="server" href="~/ViewReports" role="button">See Your Reports</a>
+                <a class="btn btn-primary" runat="server" href="~/ViewReport" role="button">See Your Reports</a>
             </div>
             <!-- Jumbotron -->
         </div>

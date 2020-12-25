@@ -11,13 +11,48 @@ namespace Farmers_Market
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
+            if (Session["farmer"] != null)
+            {
+                loggedUser.Text = Session["farmer"].ToString();
+                userControls.Visible = false;
+                userAvatar.Visible = true;
+                btnViewReport.Visible = true;
+
+            }
+            if (Session["doa"] != null)
+            {
+                loggedUser.Text = Session["doa"].ToString();
+                userControls.Visible = false;
+                userAvatar.Visible = true;
+
+            }
+            if (Session["keels"] != null)
+            {
+                loggedUser.Text = Session["keels"].ToString();
+                userControls.Visible = false;
+                userAvatar.Visible = true;
+
+            }
+            if (Session["webmaster"] != null)
+            {
+                loggedUser.Text = Session["webmaster"].ToString();
+                userControls.Visible = false;
+                userAvatar.Visible = true;
+
+            }
+
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Response.Redirect("~/");
+        }
+
+        protected void btnViewReport_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ViewReport");
         }
     }
 }
