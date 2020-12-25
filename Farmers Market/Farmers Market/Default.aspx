@@ -23,6 +23,13 @@
             var infowindow = new google.maps.InfoWindow({
                 content: "Testing"
             });
+            google.maps.event.addListener(marker, 'click', function () {
+                var pos = map.getZoom();
+                map.setZoom(9);
+                map.setCenter(marker.getPosition());
+                window.setTimeout(function () { map.setZoom(pos); }, 3000);
+            });
+
 
             infowindow.open(map, marker);
         }
