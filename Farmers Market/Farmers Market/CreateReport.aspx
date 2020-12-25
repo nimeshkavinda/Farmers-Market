@@ -8,7 +8,7 @@
             <div class="p-5 text-left">
                 <h1 class="mb-3">Sell your harvest without a hassle on Farmer's Market</h1>
                 <h4 class="mb-3">Project of Department of Agriculture in-collaboration with Keels</h4>
-                <a class="btn btn-primary" runat="server" href="~/" role="button">See All Reports</a>
+                <a class="btn btn-primary" runat="server" href="~/ViewReports" role="button">See Your Reports</a>
             </div>
             <!-- Jumbotron -->
         </div>
@@ -43,7 +43,7 @@
                                                 <asp:ListItem Enabled="true" Text="Fruit" Value="Fruit" Selected="True"></asp:ListItem>
                                                 <asp:ListItem Text="Vegetable" Value="Vegetable"></asp:ListItem>
                                             </asp:DropDownList>
-                                            <asp:RequiredFieldValidator ID="validateReportForm" runat="server" ErrorMessage="Required" ControlToValidate="reportType" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
+                                            <asp:RequiredFieldValidator ID="validateReportType" runat="server" ErrorMessage="Required" ControlToValidate="reportType" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
                                             <label>Location (Use map to get the location)</label><br />
@@ -92,7 +92,6 @@
                                         <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" OnClick="btnCreateReport_Click" />
                                         <asp:Label ID="lblSuccess" runat="server" Text="" ForeColor="Green"></asp:Label>
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
-                                        <asp:Image ID="Image1" runat="server" />
                                     </div>
                                 </div>
                             </div>
