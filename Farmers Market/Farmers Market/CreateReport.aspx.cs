@@ -62,21 +62,21 @@ namespace Farmers_Market
             string email = Session["farmer"].ToString();
 
             HttpPostedFile postedFile = reportPhoto.PostedFile;
-            string filename = Path.GetFileName(postedFile.FileName);
-            string fileExtension = Path.GetExtension(filename);
-            int fileSize = postedFile.ContentLength;
-
             Stream stream = postedFile.InputStream;
             BinaryReader binaryReader = new BinaryReader(stream);
-            Byte[] img = binaryReader.ReadBytes((int)stream.Length);
+            Byte[] img = binaryReader.ReadBytes((Int32)stream.Length);
+            //string strBase64 = Convert.ToBase64String(img);
+            //Image1.ImageUrl = "data:Image/png;base64," + strBase64;
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
-            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "','"+ img + "','" + email + "')";
-            SqlCommand cmd = new SqlCommand(qry, con);
+            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "',@pic,'" + email + "')";
+            SqlCommand cmd = new SqlCommand(qry);
+            cmd.Parameters.AddWithValue("@pic", img);
 
             try
             {
                 con.Open();
+                cmd.Connection = con;
                 cmd.ExecuteNonQuery();
                 lblSuccess.Text = "Report has been created";
             }
@@ -96,6 +96,16 @@ namespace Farmers_Market
                 reportDesc.Text = "";
                 reportPrice.Text = "";
             }
+
+            String qry1 = "SELECT * FROM Report WHERE Email='" + Session["farmer"].ToString() + "'";
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand(qry1);
+            cmd1.Connection = con;
+            SqlDataReader sdr = cmd1.ExecuteReader();
+            sdr.Read();
+            byte[] bytes = (byte[])sdr["Image"];
+            Image1.ImageUrl = "data:image/jpg;base64," + Convert.ToBase64String(bytes);
+            con.Close();
 
         }
     }

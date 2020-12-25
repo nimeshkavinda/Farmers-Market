@@ -92,6 +92,7 @@
                                         <asp:Button ID="btnCreateReport" runat="server" Text="Create report" class="btn btn-primary" ValidationGroup="createReportForm" OnClick="btnCreateReport_Click" />
                                         <asp:Label ID="lblSuccess" runat="server" Text="" ForeColor="Green"></asp:Label>
                                         <asp:Label ID="lblError" runat="server" Text="" ForeColor="Red"></asp:Label>
+                                        <asp:Image ID="Image1" runat="server" />
                                     </div>
                                 </div>
                             </div>
