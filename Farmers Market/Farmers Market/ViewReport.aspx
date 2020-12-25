@@ -10,7 +10,6 @@
                     <h1 class="display-6">Welcome,
                 <asp:Label ID="loggedInFarmer" runat="server" Text=""></asp:Label></h1>
                     <p class="lead">Easily navigate through all your reports at one place.</p>
-                    <asp:HiddenField ID="loggedInFarmerEmail" runat="server" />
                 </div>
             </div>
             <!-- Jumbotron -->
@@ -26,7 +25,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-12" style="margin-top: 10px; margin-bottom: 50px;">
-                <asp:SqlDataSource ID="SqlDataSourceReport" runat="server" ConnectionString="<%$ ConnectionStrings:conString %>" DeleteCommand="DELETE FROM [Report] WHERE [ReportId] = @ReportId" InsertCommand="INSERT INTO [Report] ([Title], [HarvestType], [Description], [Price]) VALUES (@Title, @HarvestType, @Description, @Price)" UpdateCommand="UPDATE [Report] SET [Title] = @Title, [HarvestType] = @HarvestType, [Description] = @Description, [Price] = @Price WHERE [ReportId] = @ReportId">
+                <asp:SqlDataSource ID="SqlDataSourceReport" runat="server">
                     <DeleteParameters>
                         <asp:Parameter Name="ReportId" Type="Int32" />
                     </DeleteParameters>
@@ -44,7 +43,7 @@
                         <asp:Parameter Name="ReportId" Type="Int32" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
-                <asp:GridView ID="gridViewReport" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None">
+                <asp:GridView ID="gridViewReport" runat="server" AutoGenerateColumns="False" CellPadding="6"  CellSpacing="6" DataKeyNames="ReportId" DataSourceID="SqlDataSourceReport" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

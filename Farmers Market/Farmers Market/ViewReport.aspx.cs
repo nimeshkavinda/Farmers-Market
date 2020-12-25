@@ -23,7 +23,6 @@ namespace Farmers_Market
                 userControls.Visible = false;
                 PlaceHolder userAvatar = (PlaceHolder)Master.FindControl("userAvatar");
                 userAvatar.Visible = true;
-                loggedInFarmerEmail.Value = Session["farmer"].ToString();
 
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
                 String qry = "SELECT * FROM Farmer WHERE Email='" + Session["farmer"].ToString() + "'";
@@ -37,17 +36,16 @@ namespace Farmers_Market
 
                 loggedInFarmer.Text = (fname + " " + lname);
 
+                SqlDataSourceReport.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                SqlDataSourceReport.SelectCommand = "SELECT * FROM Report WHERE Email='" + Session["farmer"].ToString() + "'";
+                SqlDataSourceReport.UpdateCommand = "UPDATE [Report] SET [Title] = @Title, [HarvestType] = @HarvestType, [Description] = @Description, [Price] = @Price WHERE [ReportId] = @ReportId";
+                SqlDataSourceReport.DeleteCommand = "DELETE FROM [Report] WHERE [ReportId] = @ReportId";
+
             }
             else
             {
 
                 Response.Redirect("~/FarmerLogin");
-
-            }
-
-            if (!IsPostBack)
-            {
-                SqlDataSourceReport.SelectCommand = "SELECT * FROM Report WHERE Email='"+Session["farmer"].ToString()+"'";
 
             }
 
