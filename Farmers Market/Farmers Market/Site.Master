@@ -90,7 +90,7 @@
                                 <a class="nav-link" runat="server" href="~/CreateReport">Create a Report</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" runat="server" href="~/">Analysis</a>
+                                <a class="nav-link" runat="server" href="~/Analysis">Analysis</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" runat="server" href="~/About">About</a>
