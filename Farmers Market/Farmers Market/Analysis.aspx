@@ -10,121 +10,95 @@
             <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
         </div>
         <div class="row">
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-primary py-2">
+            <div class="col-md-6">
+                <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col mr-2">
-                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Earnings (monthly)</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Most reported harvest type</span></div>
+                                <div class="text-dark font-weight-bold h5 mb-0">
+                                    <asp:Label ID="mostItemType" runat="server" Text=""></asp:Label>
+                                </div>
                             </div>
                             <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-success py-2">
+            <div class="col-md-6">
+                <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col mr-2">
-                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Earnings (annual)</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
+                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Most reported price</span></div>
+                                <div class="text-dark font-weight-bold h5 mb-0">
+                                    <asp:Label ID="mostItemPrice" runat="server" Text=""></asp:Label>
+                                </div>
                             </div>
                             <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-info py-2">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Tasks</span></div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>50%</span></div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"><span class="sr-only">50%</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
-                        </div>
-                    </div>
+
+        </div>
+    <div class="row">
+        <div class="col-lg-6 col-xl-7">
+            <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="text-primary font-weight-bold m-0">Prices</h6>
                 </div>
-            </div>
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-warning py-2">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Pending Requests</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
-                            </div>
-                            <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
-                        </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <asp:Chart ID="chartPrice" runat="server" Width="450px">
+                            <Series>
+                                <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
+                                </asp:Series>
+                            </Series>
+                            <ChartAreas>
+                                <asp:ChartArea Name="chartPriceArea">
+                                    <AxisX Title="Item">
+                                    </AxisX>
+                                    <AxisY Title="Price">
+                                    </AxisY>
+                                </asp:ChartArea>
+                            </ChartAreas>
+                        </asp:Chart>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-7 col-xl-8">
-                <div class="card shadow mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Prices</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <asp:Chart ID="chartPrice" runat="server" Width="450px">
-                                <Series>
-                                    <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
-                                    </asp:Series>
-                                </Series>
-                                <ChartAreas>
-                                    <asp:ChartArea Name="chartPriceArea">
-                                        <AxisX Title="Item">
-                                        </AxisX>
-                                        <AxisY Title="Price">
-                                        </AxisY>
-                                    </asp:ChartArea>
-                                </ChartAreas>
-                            </asp:Chart>
-                        </div>
-                    </div>
+        <div class="col-lg-6 col-xl-5">
+            <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="text-primary font-weight-bold m-0">Harvest Types</h6>
                 </div>
-            </div>
-            <div class="col-lg-5 col-xl-4">
-                <div class="card shadow mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Item Types</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="chart-area">
-                            <asp:Chart ID="chartItemType" runat="server" Width="450px">
-                                <Series>
-                                    <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4">
-                                    </asp:Series>
-                                </Series>
-                                <ChartAreas>
-                                    <asp:ChartArea Name="chartItemTypeArea">
-                                        <AxisX Title="Item">
-                                        </AxisX>
-                                        <AxisY Title="Price">
-                                        </AxisY>
-                                    </asp:ChartArea>
-                                </ChartAreas>
-                            </asp:Chart>
-                        </div>
-                    </div>
+                <div class="card-body">
+                    <div class="chart-area">
+                        <asp:Chart ID="chartItemType" runat="server" Width="400px">
+                            <Series>
+                                <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
+                                </asp:Series>
+                            </Series>
+                            <ChartAreas>
+                                <asp:ChartArea Name="chartItemTypeArea">
+                                    <AxisX Title="Item">
+                                    </AxisX>
+                                    <AxisY Title="Price">
+                                    </AxisY>
+                                </asp:ChartArea>
+                            </ChartAreas>
+                            <Legends>
+                                <asp:Legend Name="Harvest Type">
+                                </asp:Legend>
+                            </Legends>
+                        </asp:Chart>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">

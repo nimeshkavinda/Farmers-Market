@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -18,55 +19,107 @@ namespace Farmers_Market
             if (!IsPostBack)
             {
 
-                getPirceChartData();
+                getMostPrice();
+                getMostType();
+                getPriceChartData();
                 getItemTypeChartData();
 
             }
 
         }
 
-        private void getPirceChartData()
+        private void getMostPrice()
         {
-            string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(cs))
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "SELECT MAX(Convert(int, Price)) as mostPrice FROM Report WHERE isnumeric(Price) = 1";
+
+            SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds, "Report");
+
+            string price = ds.Tables[0].Rows[0]["mostPrice"].ToString();
+            mostItemPrice.Text = price;
+
+        }
+
+        private void getMostType()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "SELECT HarvestType, COUNT(HarvestType) AS mostType FROM Report GROUP BY HarvestType ORDER BY mostType DESC";
+
+            SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds, "Report");
+
+            string type = ds.Tables[0].Rows[0]["HarvestType"].ToString();
+            mostItemType.Text = type;
+
+        }
+
+        private void getPriceChartData()
+        {
+            try
             {
-                
-                SqlCommand cmd = new
-                    SqlCommand("SELECT Title, Price FROM Report", con);
-                con.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
-                
-                Series chartPriceSeries = chartPrice.Series["chartPriceSeries"];
-                
-                while (sdr.Read())
+
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
                 {
-                    chartPriceSeries.Points.AddXY(sdr["Title"].ToString(),
-                        sdr["Price"]);
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT Title, Price FROM Report", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartPriceSeries = chartPrice.Series["chartPriceSeries"];
+
+                    while (sdr.Read())
+                    {
+                        chartPriceSeries.Points.AddXY(sdr["Title"].ToString(),
+                            sdr["Price"]);
+                    }
                 }
+
             }
+            catch (SqlException) 
+            {
+
+            }
+
         }
 
         private void getItemTypeChartData()
         {
-            
-            string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(cs))
+            try
             {
 
-                SqlCommand cmd = new
-                    SqlCommand("SELECT HarvestType, COUNT(*) AS noOfTypes FROM Report GROUP BY HarvestType", con);
-                con.Open();
-                SqlDataReader sdr = cmd.ExecuteReader();
-                
-                Series chartItemTypeSeries = chartItemType.Series["chartItemTypeSeries"];
-                
-                while (sdr.Read())
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
                 {
-                    chartItemTypeSeries.Points.AddXY(sdr["HarvestType"],
-                        sdr["noOfTypes"]);
-                    
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT HarvestType, COUNT(*) AS noOfTypes FROM Report GROUP BY HarvestType", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartItemTypeSeries = chartItemType.Series["chartItemTypeSeries"];
+
+                    while (sdr.Read())
+                    {
+
+                        chartItemTypeSeries.Points.AddXY(sdr["HarvestType"],
+                            sdr["noOfTypes"]);
+
+                    }
                 }
+
             }
+            catch (SqlException) 
+            { 
+
+            }
+
         }
     }
 }
