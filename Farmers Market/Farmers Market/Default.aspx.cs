@@ -20,6 +20,7 @@ namespace Farmers_Market
                 DataTable dt = this.getData(@"SELECT * FROM Report");
                 reportMarker.DataSource = dt;
                 reportMarker.DataBind();
+
             }
 
         }

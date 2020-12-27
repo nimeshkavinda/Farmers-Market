@@ -163,7 +163,7 @@
         </header>
 
         <!--Content-->
-        <div class="body-content">
+        <div class="body-content" style="padding: 0 !important;padding: 0 !important;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
