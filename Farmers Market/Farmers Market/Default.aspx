@@ -2,9 +2,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container">
+    <div class="container-fluid" style="padding: 0 !important;padding: 0 !important";>
 
-        <div id="googleMap" style="width: 100%; height: 800px; margin-top: 30px; margin-bottom: 50px; border-radius: 0.4em;"></div>
+        <div id="googleMap" style="width: 100%; height: 94vh;"></div>
         
         <script>
 
@@ -16,7 +16,7 @@
                         {
                             "lat": '<%# Eval("Lat") %>',
                             "lng": '<%# Eval("Lng") %>',
-                            "content": '<div class="card" style="width: 18rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><%# Eval("Price") %></li></ul><div class="card-body"><a href="#" class="card-link">Buy</a><a href="#" class="card-link">Contact Farmer</a></div></div>'
+                            "content": '<div class="card" style="width: 18rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Price: <%# Eval("Price") %></div></li></ul><div class="card-body"><a runat="server" href="#" class="card-link">Buy</a><a runat="server" href="#" class="card-link">Contact Farmer</a><a runat="server" href="#" class="card-link">Flag as Inedible</a></div></div>'
                         }
                     </ItemTemplate>
 
@@ -29,14 +29,14 @@
                 ];
 
         </script>       
-
+        
         <script>
 
             window.onload = function () {
 
                 var mapOptions = {
                     center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-                    zoom: 10,
+                    zoom: 12,
                     
                 };
 
