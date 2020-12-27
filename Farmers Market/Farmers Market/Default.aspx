@@ -7,8 +7,9 @@
         <div id="googleMap" style="width: 100%; height: 500px; margin-top: 30px; margin-bottom: 50px; border-radius: 0.4em;"></div>
         
         <script>
+
             var markers = [
-                <asp:Repeater ID="rptMarkers" runat="server">
+                <asp:Repeater ID="reportMarker" runat="server">
                     <ItemTemplate>
                         {
                             "lat": '<%# Eval("Lat") %>',"lng": '<%# Eval("Lng") %>',"description": '<%# Eval("Title") %>'
@@ -26,8 +27,8 @@
             window.onload = function () {
                 var mapOptions = {
                     center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
-                    zoom: 5,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    zoom: 10,
+                    
                 };
                 var infoWindow = new google.maps.InfoWindow();
                 var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
