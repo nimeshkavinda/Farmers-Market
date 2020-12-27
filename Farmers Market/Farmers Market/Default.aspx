@@ -65,6 +65,8 @@
         </script>
 
         <!--Modals-->
+        <!-- Scrollable modal -->
+        <div class="modal-dialog modal-dialog-scrollable">...</div>
         <!-- Button trigger modal -->
         <button
             type="button"
