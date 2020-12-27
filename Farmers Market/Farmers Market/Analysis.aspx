@@ -10,6 +10,14 @@
             <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
         </div>
         <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="margin-bottom: 30px;">
+                    <li class="breadcrumb-item"><a runat="server" href="~/">Home</a></li>
+                    <li class="breadcrumb-item active">Analysis</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
