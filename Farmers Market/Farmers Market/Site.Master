@@ -161,9 +161,9 @@
             </nav>
             <!-- Navbar -->
         </header>
-        <div id="map" style="width: 100%"></div>
+
         <!--Content-->
-        <div class="container body-content">
+        <div class="body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
