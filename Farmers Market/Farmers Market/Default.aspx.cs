@@ -17,18 +17,18 @@ namespace Farmers_Market
 
             if (!this.IsPostBack)
             {
-                DataTable dt = this.GetData(@"SELECT * FROM Report");
-                rptMarkers.DataSource = dt;
-                rptMarkers.DataBind();
+                DataTable dt = this.getData(@"SELECT * FROM Report");
+                reportMarker.DataSource = dt;
+                reportMarker.DataBind();
             }
 
         }
 
-        private DataTable GetData(string query)
+        private DataTable getData(string query)
         {
-            string conString = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
             SqlCommand cmd = new SqlCommand(query);
-            using (SqlConnection con = new SqlConnection(conString))
+            using (SqlConnection con = new SqlConnection(cs))
             {
                 using (SqlDataAdapter sda = new SqlDataAdapter())
                 {
