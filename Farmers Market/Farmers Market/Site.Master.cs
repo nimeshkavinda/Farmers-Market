@@ -39,6 +39,7 @@ namespace Farmers_Market
                 loggedUser.Text = Session["webmaster"].ToString();
                 userControls.Visible = false;
                 userAvatar.Visible = true;
+                menuItems.Visible = false;
 
             }
 
