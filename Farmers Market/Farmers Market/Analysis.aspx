@@ -10,6 +10,14 @@
             <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
         </div>
         <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" style="margin-bottom: 30px;">
+                    <li class="breadcrumb-item"><a runat="server" href="~/">Home</a></li>
+                    <li class="breadcrumb-item active">Analysis</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
@@ -42,63 +50,62 @@
             </div>
 
         </div>
-    <div class="row">
-        <div class="col-lg-6 col-xl-7">
-            <div class="card shadow mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h6 class="text-primary font-weight-bold m-0">Prices</h6>
+        <div class="row">
+            <div class="col-lg-6 col-xl-7">
+                <div class="card shadow mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="text-primary font-weight-bold m-0">Prices</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-area">
+                            <asp:Chart ID="chartPrice" runat="server" Width="450px">
+                                <Series>
+                                    <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
+                                    </asp:Series>
+                                </Series>
+                                <ChartAreas>
+                                    <asp:ChartArea Name="chartPriceArea">
+                                        <AxisX Title="Item">
+                                        </AxisX>
+                                        <AxisY Title="Price">
+                                        </AxisY>
+                                    </asp:ChartArea>
+                                </ChartAreas>
+                            </asp:Chart>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <asp:Chart ID="chartPrice" runat="server" Width="450px">
-                            <Series>
-                                <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
-                                </asp:Series>
-                            </Series>
-                            <ChartAreas>
-                                <asp:ChartArea Name="chartPriceArea">
-                                    <AxisX Title="Item">
-                                    </AxisX>
-                                    <AxisY Title="Price">
-                                    </AxisY>
-                                </asp:ChartArea>
-                            </ChartAreas>
-                        </asp:Chart>
+            </div>
+            <div class="col-lg-6 col-xl-5">
+                <div class="card shadow mb-4">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="text-primary font-weight-bold m-0">Harvest Types</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-area">
+                            <asp:Chart ID="chartItemType" runat="server" Width="400px">
+                                <Series>
+                                    <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
+                                    </asp:Series>
+                                </Series>
+                                <ChartAreas>
+                                    <asp:ChartArea Name="chartItemTypeArea">
+                                        <AxisX Title="Item">
+                                        </AxisX>
+                                        <AxisY Title="Price">
+                                        </AxisY>
+                                    </asp:ChartArea>
+                                </ChartAreas>
+                                <Legends>
+                                    <asp:Legend Name="Harvest Type">
+                                    </asp:Legend>
+                                </Legends>
+                            </asp:Chart>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-xl-5">
-            <div class="card shadow mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h6 class="text-primary font-weight-bold m-0">Harvest Types</h6>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area">
-                        <asp:Chart ID="chartItemType" runat="server" Width="400px">
-                            <Series>
-                                <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
-                                </asp:Series>
-                            </Series>
-                            <ChartAreas>
-                                <asp:ChartArea Name="chartItemTypeArea">
-                                    <AxisX Title="Item">
-                                    </AxisX>
-                                    <AxisY Title="Price">
-                                    </AxisY>
-                                </asp:ChartArea>
-                            </ChartAreas>
-                            <Legends>
-                                <asp:Legend Name="Harvest Type">
-                                </asp:Legend>
-                            </Legends>
-                        </asp:Chart>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
         <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">
