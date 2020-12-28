@@ -64,7 +64,7 @@
                                             <asp:RequiredFieldValidator ID="validateReportDesc" runat="server" ErrorMessage="Required" ForeColor="Red" ValidationGroup="createReportForm" ControlToValidate="reportDesc"></asp:RequiredFieldValidator>
                                         </div>
                                         <div class="form-group">
-                                            <label for="reportPrice">Price</label>
+                                            <label for="reportPrice">Price (in rupees)</label>
                                             <asp:TextBox ID="reportPrice" runat="server" type="number" class="form-control" placeholder="Pick a good price" ValidationGroup="createReportForm"></asp:TextBox>
                                             <asp:RequiredFieldValidator ID="validateReportPrice" runat="server" ErrorMessage="Required" ControlToValidate="reportPrice" ForeColor="Red" ValidationGroup="createReportForm"></asp:RequiredFieldValidator>
                                         </div>
