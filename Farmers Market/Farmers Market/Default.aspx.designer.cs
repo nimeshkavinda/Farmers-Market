@@ -33,6 +33,15 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.TextBox recipientName;
 
         /// <summary>
+        /// validateRecipientName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateRecipientName;
+
+        /// <summary>
         /// messageText control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.TextBox messageText;
 
         /// <summary>
-        /// btnCloseModalContact control.
+        /// validateMessageText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCloseModalContact;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateMessageText;
 
         /// <summary>
         /// btnSendMessage control.
