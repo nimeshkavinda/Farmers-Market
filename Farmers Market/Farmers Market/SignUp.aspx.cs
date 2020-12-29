@@ -40,7 +40,7 @@ namespace Farmers_Market
             {
                 con.Open();
                 cmd.ExecuteNonQuery();
-                Response.Write("<script>alert('Registration successful. Please log in');</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Registration successful. Please log in');", true);
             }
 
             catch (SqlException ex)
@@ -49,7 +49,7 @@ namespace Farmers_Market
                 if (ex.Number == 2627)
                 {
 
-                    Response.Write("<script>alert('The email you entered is already being used');</script>");
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('The email you entered is already being used');", true);
 
                 }
 

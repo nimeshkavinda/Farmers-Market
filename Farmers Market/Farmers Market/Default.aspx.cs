@@ -80,24 +80,27 @@ namespace Farmers_Market
                 client.EnableSsl = true;
                 client.UseDefaultCredentials = false;
                 client.Credentials = basicCredential1;
+
                 try
                 {
 
                     client.Send(message);
-                    Response.Write("<script>alert('Message has been sent');</script>");
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Message has been sent');", true);
 
                 }
 
                 catch (Exception)
                 {
-                    Response.Write("<script>alert('Failed to send message');</script>");
+                    
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to send message');", true);
+
                 }
 
             }
             else
             {
 
-                Response.Write("<script>alert('You need to be logged in as Keels staff to send messages to farmers');</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('You need to be logged in as Keels staff to send messages to farmers');", true);
                 //ContentPlaceHolder MainContent = (ContentPlaceHolder)Master.FindControl("MainContent");
                 //Content KeelsLogin = (Content)MainContent.FindControl("KeelsLogin");
                 //Label lblError = (Label)KeelsLogin.FindControl("lblError");
