@@ -33,8 +33,8 @@
         type="text/javascript"
         src="Scripts/mdb.min.js"></script>
 
-    <!--GoogleMapAPI-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFb4ebCaXgIKAzNopg8pVHCNEu7l8qp7o&callback=myMap"></script>
+    <script src="Scripts/mdbmodal.js"></script>
 
 </head>
 <body>
@@ -129,6 +129,9 @@
                                             <asp:Button ID="btnViewReport" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnViewReport_Click" Text="Your Reports" CausesValidation="false" Visible="false" />
                                         </a></li>
                                         <li><a class="dropdown-item">
+                                            <asp:Button ID="btnProfile" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnProfile_Click" Text="Profile" CausesValidation="false" Visible="false" />
+                                        </a></li>
+                                        <li><a class="dropdown-item">
                                             <asp:Button ID="btnLogout" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" CausesValidation="false" />
                                         </a></li>
                                     </ul>
@@ -169,6 +172,7 @@
 
         </div>
 
+        <!--Footer-->
         <footer class="bg-primary text-white text-center text-lg-start">
             <!-- Grid container -->
             <div class="container p-4">
@@ -238,7 +242,7 @@
     <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
             </div>
             <!-- Copyright -->
-        </footer>
+        </ footer>
 
     </form>
 

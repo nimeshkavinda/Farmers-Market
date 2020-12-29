@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col mr-2">
-                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Most reported price</span></div>
+                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Most reported price (in rupees)</span></div>
                                 <div class="text-dark font-weight-bold h5 mb-0">
                                     <asp:Label ID="mostItemPrice" runat="server" Text=""></asp:Label>
                                 </div>
@@ -67,7 +67,7 @@
                                     <asp:ChartArea Name="chartPriceArea">
                                         <AxisX Title="Item">
                                         </AxisX>
-                                        <AxisY Title="Price">
+                                        <AxisY Title="Price (in rupees)">
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>

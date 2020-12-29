@@ -30,6 +30,7 @@ namespace Farmers_Market
             {
                 if (dtbl.Rows.Count == 1)
                 {
+                    Session.Clear();
                     Session["farmer"] = txtFarmerEmail.Text;
                     Response.Redirect("~/");
                 }

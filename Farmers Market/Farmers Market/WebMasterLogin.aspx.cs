@@ -29,6 +29,7 @@ namespace Farmers_Market
             {
                 if (dtbl.Rows.Count == 1)
                 {
+                    Session.Clear();
                     Session["webmaster"] = txtWebMasterUsername.Text;
                     Response.Redirect("~/AdminPanel");
                 }

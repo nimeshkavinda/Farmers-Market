@@ -79,7 +79,7 @@ namespace Farmers_Market
                 lblSuccess.Text = "Report has been created";
             }
 
-            catch (SqlException ex)
+            catch (SqlException)
             {
 
                 lblError.Text = "Failed to create the report";

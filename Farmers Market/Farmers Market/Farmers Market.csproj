@@ -183,6 +183,7 @@
     <Content Include="CreateReport.aspx" />
     <Content Include="ViewReport.aspx" />
     <Content Include="Analysis.aspx" />
+    <Content Include="Profile.aspx" />
     <Content Include="WebMasterLogin.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
@@ -401,6 +402,13 @@
     </Compile>
     <Compile Include="Analysis.aspx.designer.cs">
       <DependentUpon>Analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMasterLogin.aspx.cs">
       <DependentUpon>WebMasterLogin.aspx</DependentUpon>
