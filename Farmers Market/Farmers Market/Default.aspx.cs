@@ -7,6 +7,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 
 namespace Farmers_Market
 {
@@ -43,6 +46,66 @@ namespace Farmers_Market
                     }
                 }
             }
+        }
+
+        protected void btnSendMessage_Click(object sender, EventArgs e)
+        {
+
+            if (Session["keels"] != null)
+            {
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+                String qry = "SELECT * FROM Keels WHERE Username='" + Session["keels"].ToString() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+                DataSet ds = new DataSet();
+                sda.Fill(ds, "Keels");
+
+                string fname = ds.Tables[0].Rows[0][2].ToString();
+                string lname = ds.Tables[0].Rows[0][3].ToString();
+
+                string keelsStaffName = fname + " " + lname;
+
+                string to = recipientName.Text; //To address    
+                string from = "farmersmarketnsbm@gmail.com"; //From address    
+                MailMessage message = new MailMessage(from, to);
+
+                string mailbody = messageText.Text;
+                message.Subject = "New message from " + keelsStaffName + " from Keels for your Report on Farmer's Market";
+                message.Body = mailbody;
+                message.BodyEncoding = Encoding.UTF8;
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
+                System.Net.NetworkCredential basicCredential1 = new
+                System.Net.NetworkCredential("farmersmarketnsbm@gmail.com", "farmersmarket@google");
+                client.EnableSsl = true;
+                client.UseDefaultCredentials = false;
+                client.Credentials = basicCredential1;
+                try
+                {
+
+                    client.Send(message);
+                    Response.Write("<script>alert('Message has been sent');</script>");
+
+                }
+
+                catch (Exception)
+                {
+                    Response.Write("<script>alert('Failed to send message');</script>");
+                }
+
+            }
+            else
+            {
+
+                Response.Write("<script>alert('You need to be logged in as Keels staff to send messages to farmers');</script>");
+                //ContentPlaceHolder MainContent = (ContentPlaceHolder)Master.FindControl("MainContent");
+                //Content KeelsLogin = (Content)MainContent.FindControl("KeelsLogin");
+                //Label lblError = (Label)KeelsLogin.FindControl("lblError");
+                //lblError.Text = "You need to be logged in as Keels staff to contact farmers";
+                //Response.Redirect("~/KeelsLogin");
+
+            }
+
         }
     }
 }
