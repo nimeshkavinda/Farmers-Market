@@ -17,7 +17,7 @@
                             "lat": '<%# Eval("Lat") %>',
                             "lng": '<%# Eval("Lng") %>',
                             "farmer": '<%# Eval("Email") %>',
-                            "content": '<div class="card" style="width: 25rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Buy</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
+                            "content": '<div class="card" style="width: 25rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">Buy</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
                         }
                     </ItemTemplate>
 
@@ -69,7 +69,37 @@
 
         </script>
 
-        <!--Modals-->        
+        <!--Modals-->
+        <!--Modal: Buy-->
+        <div
+            class="modal fade"
+            id="modalBuy"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Product in the cart</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-mdb-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        <asp:Button ID="btnBuyNow" class="btn btn-primary" runat="server" Text="Buy now" ValidationGroup="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--Modal: Contact-->
         <div
             class="modal fade"
@@ -80,7 +110,7 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modalLabel">New message</h5>
+                        <h5 class="modal-title" id="modalLabel">Send message to farmer</h5>
                         <button
                             type="button"
                             class="btn-close"
