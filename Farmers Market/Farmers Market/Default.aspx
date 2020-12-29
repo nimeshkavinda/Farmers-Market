@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container-fluid" style="padding: 0 !important;padding: 0 !important";>
+    <div class="container-fluid" style="padding: 0 !important;margin: 0 !important";>
 
         <div id="googleMap" style="width: 100%; height: 94vh;"></div>
         
@@ -17,7 +17,7 @@
                             "lat": '<%# Eval("Lat") %>',
                             "lng": '<%# Eval("Lng") %>',
                             "farmer": '<%# Eval("Email") %>',
-                            "content": '<div class="card" style="width: 25rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" >Buy</button><button type="button" class="btn btn-link" data-mdb-color="dark" >Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" >Flag as inedible</button></div></div></div>'
+                            "content": '<div class="card" style="width: 25rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Buy</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
                         }
                     </ItemTemplate>
 
@@ -25,11 +25,11 @@
                         ,
                     </SeparatorTemplate>
 
-                </asp:Repeater >
+                </asp:Repeater>
 
                 ];
 
-        </script>       
+        </script>
         
         <script>
 
@@ -59,7 +59,7 @@
                         google.maps.event.addListener(marker, "click", function (e) {
                             infoWindow.setContent(data.content);
                             infoWindow.open(map, marker);
-                            document.getElementById('recipient-name').value = data.farmer;
+                            document.getElementById('recipientName').value = data.farmer;
                         });
                     })(marker, data);
 
@@ -73,14 +73,14 @@
         <!--Modal: Contact-->
         <div
             class="modal fade"
-            id="exampleModal"
+            id="modalContact"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <h5 class="modal-title" id="modalLabel">New message</h5>
                         <button
                             type="button"
                             class="btn-close"
@@ -91,20 +91,18 @@
                     <div class="modal-body">
                         <div class="farmerContactForm">
                             <div class="mb-3">
-                                <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control" id="recipient-name" />
+                                <label for="recipientName" class="col-form-label">Recipient:</label>
+                                <asp:TextBox ID="recipientName" type="text" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox>
                             </div>
                             <div class="mb-3">
-                                <label for="message-text" class="col-form-label">Message:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
+                                <label for="messageText" class="col-form-label">Message:</label>
+                                <asp:TextBox ID="messageText" TextMode="MultiLine" class="form-control" runat="server"></asp:TextBox>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="button" class="btn btn-primary">Send message</button>
+                        <asp:Button ID="btnCloseModalContact" class="btn btn-secondary" data-mdb-dismiss="modal" runat="server" Text="Close" />
+                        <asp:Button ID="btnSendMessage" class="btn btn-primary" runat="server" Text="Send message" />
                     </div>
                 </div>
             </div>
