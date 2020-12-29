@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="KeelsLogin.aspx.cs" Inherits="Farmers_Market.WebForm6" %>
+﻿<%@ Page Title="Keels Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="KeelsLogin.aspx.cs" Inherits="Farmers_Market.WebForm6" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="KeelsLogin" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
         <div class="row justify-content-center">

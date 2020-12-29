@@ -77,7 +77,7 @@
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalLabel">New message</h5>
@@ -92,17 +92,19 @@
                         <div class="farmerContactForm">
                             <div class="mb-3">
                                 <label for="recipientName" class="col-form-label">Recipient:</label>
-                                <asp:TextBox ID="recipientName" type="text" ClientIDMode="Static" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="recipientName" type="text" ClientIDMode="Static" class="form-control" runat="server" ValidationGroup="farmerContactForm"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="validateRecipientName" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="recipientName" ValidationGroup="farmerContactForm"></asp:RequiredFieldValidator>
                             </div>
                             <div class="mb-3">
                                 <label for="messageText" class="col-form-label">Message:</label>
-                                <asp:TextBox ID="messageText" TextMode="MultiLine" class="form-control" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="messageText" TextMode="MultiLine" class="form-control" runat="server" ValidationGroup="farmerContactForm"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="validateMessageText" runat="server" ErrorMessage="Required" ForeColor="Red" ControlToValidate="messageText" ValidationGroup="farmerContactForm"></asp:RequiredFieldValidator>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="btnCloseModalContact" class="btn btn-secondary" data-mdb-dismiss="modal" runat="server" Text="Close" />
-                        <asp:Button ID="btnSendMessage" class="btn btn-primary" runat="server" Text="Send message" />
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+                        <asp:Button ID="btnSendMessage" class="btn btn-primary" runat="server" Text="Send message" ValidationGroup="farmerContactForm" OnClick="btnSendMessage_Click" />
                     </div>
                 </div>
             </div>
