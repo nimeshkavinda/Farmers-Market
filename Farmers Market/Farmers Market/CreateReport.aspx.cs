@@ -67,7 +67,7 @@ namespace Farmers_Market
             Byte[] img = binaryReader.ReadBytes((Int32)stream.Length);
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
-            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "',@pic,'" + email + "')";
+            String qry = "INSERT INTO Report VALUES ('" + title + "','" + harvestType + "','" + lat + "','" + lng + "','" + desc + "','" + price + "',@pic,'" + email + "','" + null + "','" + null + "','" + null + "')";
             SqlCommand cmd = new SqlCommand(qry);
             cmd.Parameters.AddWithValue("@pic", img);
 
