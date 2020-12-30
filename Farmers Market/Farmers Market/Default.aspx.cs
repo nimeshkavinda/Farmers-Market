@@ -24,10 +24,6 @@ namespace Farmers_Market
                 reportMarker.DataSource = dt;
                 reportMarker.DataBind();
 
-                DataTable dtFarmer = this.getFarmerData(@"SELECT * FROM Farmer");
-                farmerData.DataSource = dtFarmer;
-                farmerData.DataBind();
-
                 if (Session["keels"] == null || Session["doa"] == null)
                 {
 
@@ -78,26 +74,6 @@ namespace Farmers_Market
             }
         }
 
-        private DataTable getFarmerData(string queryFarmers)
-        {
-            string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
-            SqlCommand cmd = new SqlCommand(queryFarmers);
-            using (SqlConnection con = new SqlConnection(cs))
-            {
-                using (SqlDataAdapter sda = new SqlDataAdapter())
-                {
-                    cmd.Connection = con;
-
-                    sda.SelectCommand = cmd;
-                    using (DataTable dtFarmer = new DataTable())
-                    {
-                        sda.Fill(dtFarmer);
-                        return dtFarmer;
-                    }
-                }
-            }
-        }
-
         protected void btnSendMessage_Click(object sender, EventArgs e)
         {
 
@@ -141,7 +117,7 @@ namespace Farmers_Market
 
                 catch (Exception)
                 {
-                    
+
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to send message');", true);
 
                 }

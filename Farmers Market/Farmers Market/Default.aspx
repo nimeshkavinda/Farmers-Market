@@ -35,36 +35,6 @@
                 ];
 
         </script>
-
-        <script>
-
-            var farmers = [
-
-                <asp:Repeater ID="farmerData" runat="server">
-
-                    <ItemTemplate>
-                        {
-                            "fname": '<%# Eval("FName") %>',
-                            "lname": '<%# Eval("LName") %>',
-                            "gender": '<%# Eval("Gender") %>',
-                            "dob" : '<%# Eval("Dob") %>',
-                            "nic": '<%# Eval("Nic") %>',
-                            "mobile": '<%# Eval("Mobile") %>',
-                            "city": '<%# Eval("City") %>',
-                            "state": '<%# Eval("State") %>',
-                            "zip": '<%# Eval("Zip") %>'
-                        }
-                    </ItemTemplate>
-
-                    <SeparatorTemplate>
-                        ,
-                    </SeparatorTemplate>
-
-                </asp:Repeater>
-
-                ];
-
-        </script>
         
         <script>
 
@@ -102,20 +72,10 @@
                             document.getElementById('paneInfoId').innerText = data.reportId;
                             document.getElementById('paneInfoImg').src = data.img;
                             //paneBuy data
-                            document.getElementById('lblItemPrice').innerText = "Rs. "+data.price;
+                            document.getElementById('lblItemPrice').innerText = "Rs. " + data.price;
+
                         });
                     })(marker, data);
-
-                }
-
-                for (i = 0; i < farmers.length; i++) {
-                    var farmerData = farmers[i]
-                        (function (marker, farmerData) {
-                            google.maps.event.addListener(marker, "click", function (e) {
-
-                                document.getElementById('testlbl').innerText = farmerData.fname;
-                            });
-                        })(marker, farmerData);
 
                 }
 
@@ -173,10 +133,10 @@
                                                 <div class="col-md-8">
                                                     <div class="card-body p-4">
                                                         <h3 id="paneInfoTitle" class="card-title"></h3>
-                                                        <p id="paneInfoDesc" class="card-text"></p>
                                                         <p class="card-text">
                                                             <small class="text-muted">Report ID:&nbsp;<small id="paneInfoId" class="text-muted"></small></small>
                                                         </p>
+                                                        <p id="paneInfoDesc" class="card-text"></p>
                                                     </div>
                                                 </div>
                                             </div>

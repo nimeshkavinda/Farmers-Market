@@ -24,15 +24,6 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.Repeater reportMarker;
 
         /// <summary>
-        /// farmerData control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater farmerData;
-
-        /// <summary>
         /// paneError control.
         /// </summary>
         /// <remarks>
