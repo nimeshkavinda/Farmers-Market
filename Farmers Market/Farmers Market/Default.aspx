@@ -17,6 +17,10 @@
                             "lat": '<%# Eval("Lat") %>',
                             "lng": '<%# Eval("Lng") %>',
                             "farmer": '<%# Eval("Email") %>',
+                            "img" : '<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>',
+                            "reportId": '<%# Eval("ReportId") %>',
+                            "title": '<%# Eval("Title") %>',
+                            "desc": '<%# Eval("Description") %>',
                             "content": '<div class="card" style="width: 29rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
                         }
                     </ItemTemplate>
@@ -59,7 +63,13 @@
                         google.maps.event.addListener(marker, "click", function (e) {
                             infoWindow.setContent(data.content);
                             infoWindow.open(map, marker);
+                            //message data
                             document.getElementById('recipientName').value = data.farmer;
+                            //paneInfo data
+                            document.getElementById('paneInfoTitle').innerText = data.title;
+                            document.getElementById('paneInfoDesc').innerText = data.desc;
+                            document.getElementById('paneInfoId').innerText = data.reportId;
+                            document.getElementById('paneInfoImg').src = data.img;
                         });
                     })(marker, data);
 
@@ -110,21 +120,18 @@
                                             <div class="row g-0">
                                                 <div class="col-md-4">
                                                     <img
-                                                        src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
-                                                        alt="..."
+                                                        id="paneInfoImg"
+                                                        src=""
+                                                        style="object-fit: cover;width: 100%;height: 600px;"
+                                                        alt="Report image"
                                                         class="img-fluid" />
                                                 </div>
                                                 <div class="col-md-8">
                                                     <div class="card-body p-4">
-                                                        <h3 class="card-title">
-                                                            Card title
-                                                        </h3>
+                                                        <h3 id="paneInfoTitle" class="card-title"></h3>
+                                                        <p id="paneInfoDesc" class="card-text"></p>
                                                         <p class="card-text">
-                                                            This is a wider card with supporting text below as a natural lead-in to
-                                                            additional content. This content is a little bit longer.
-                                                        </p>
-                                                        <p class="card-text">
-                                                            <small class="text-muted">Report ID: 1</small>
+                                                            <small class="text-muted">Report ID:&nbsp;<small id="paneInfoId" class="text-muted"></small></small>
                                                         </p>
                                                     </div>
                                                 </div>
