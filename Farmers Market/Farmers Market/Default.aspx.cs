@@ -24,6 +24,32 @@ namespace Farmers_Market
                 reportMarker.DataSource = dt;
                 reportMarker.DataBind();
 
+                if (Session["keels"] == null || Session["doa"] == null)
+                {
+
+                    paneError.Visible = true;
+                    paneInfo.Visible = false;
+
+                }
+
+                if (Session["keels"] != null)
+                {
+
+                    paneError.Visible = false;
+                    paneInfo.Visible = true;
+                    paneBuy.Visible = true;
+
+                }
+
+                if (Session["doa"] != null)
+                {
+
+                    paneError.Visible = false;
+                    paneInfo.Visible = true;
+                    paneBuy.Visible = false;
+
+                }
+
             }
 
         }
@@ -91,7 +117,7 @@ namespace Farmers_Market
 
                 catch (Exception)
                 {
-                    
+
                     ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to send message');", true);
 
                 }
