@@ -17,7 +17,7 @@
                             "lat": '<%# Eval("Lat") %>',
                             "lng": '<%# Eval("Lng") %>',
                             "farmer": '<%# Eval("Email") %>',
-                            "content": '<div class="card" style="width: 30rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">Inspect and Buy</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
+                            "content": '<div class="card" style="width: 29rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
                         }
                     </ItemTemplate>
 
@@ -89,7 +89,109 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+
+                        <asp:PlaceHolder ID="paneError" runat="server" Visible="false">
+                            <asp:Label ID="lblReportDetailError" runat="server" class="fs-1 d-flex align-items-center justify-content-center" Style="margin-top: 20%" Text="Only Department of Agriculture and Keels staff are eligible to view aditional details on reports"></asp:Label>
+                        </asp:PlaceHolder>
+
+                        <asp:PlaceHolder ID="paneInfo" runat="server">
+
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <h2 class="fs-1 p-3">Item in view
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="row p-3">
+                                <div class="col-md-8">
+                                    <div class="pb-3">
+
+                                        <div class="card mb-3" style="max-width: 100%">
+                                            <div class="row g-0">
+                                                <div class="col-md-4">
+                                                    <img
+                                                        src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg"
+                                                        alt="..."
+                                                        class="img-fluid" />
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body p-4">
+                                                        <h3 class="card-title">
+                                                            Card title
+                                                        </h3>
+                                                        <p class="card-text">
+                                                            This is a wider card with supporting text below as a natural lead-in to
+                                                            additional content. This content is a little bit longer.
+                                                        </p>
+                                                        <p class="card-text">
+                                                            <small class="text-muted">Report ID: 1</small>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="card bg-light mb-3" style="max-width: 98%">
+                                            <div class="card-header">Farmer details</div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="lblFarmerName">Name:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerName" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerGender">Gender:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerGender" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerDob">Date of birth:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerDob" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerNic">National identity card:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerNic" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerMobile">Mobile:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerMobile" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerCity">City:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerCity" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerState">State:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerState" runat="server" Text=""></asp:Label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="lblFarmerZip">Zip:&nbsp;</label>
+                                                    <asp:Label ID="lblFarmerZip" runat="server" Text=""></asp:Label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <asp:PlaceHolder ID="paneBuy" runat="server">
+                                            <div class="card text-white bg-danger mb-3" style="max-width: 98%">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">Buy</h5>
+                                                    <p class="card-text">
+                                                        Some quick example text to build on the card title and make up the bulk of the
+                                                    card's content.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </asp:PlaceHolder>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </asp:PlaceHolder>
 
                     </div>
                     <div class="modal-footer">
