@@ -178,11 +178,24 @@
                                         <asp:PlaceHolder ID="paneBuy" runat="server">
                                             <div class="card text-white bg-danger mb-3" style="max-width: 98%">
                                                 <div class="card-body">
-                                                    <h5 class="card-title">Buy</h5>
-                                                    <p class="card-text">
-                                                        Some quick example text to build on the card title and make up the bulk of the
-                                                    card's content.
-                                                    </p>
+                                                    <h5 class="card-title">Purchase item</h5>
+                                                    <div class="row p-1">
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="lblItemPrice" style="padding-top:5px;">Price:&nbsp;Rs:&nbsp;</label>
+                                                                <asp:Label ID="lblItemPrice" runat="server" Text="125" Font-Bold="True"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="lblItemFlag" style="padding-top:5px;">Flag:&nbsp;</label>
+                                                                <asp:Label ID="lblItemFlag" runat="server" Text="Inedible" Font-Bold="True"></asp:Label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <asp:Button ID="btnBuyNow" class="btn btn-light btn-rounded" runat="server" Text="Buy now" Visible="true" ValidationGroup="" Width="100%" />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </asp:PlaceHolder>
@@ -196,7 +209,6 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-                        <asp:Button ID="btnBuyNow" class="btn btn-primary" runat="server" Text="Buy now" Visible="true" ValidationGroup="" />
                     </div>
                 </div>
             </div>

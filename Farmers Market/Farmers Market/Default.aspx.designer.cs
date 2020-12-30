@@ -132,6 +132,24 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.PlaceHolder paneBuy;
 
         /// <summary>
+        /// lblItemPrice control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblItemPrice;
+
+        /// <summary>
+        /// lblItemFlag control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblItemFlag;
+
+        /// <summary>
         /// btnBuyNow control.
         /// </summary>
         /// <remarks>
