@@ -90,7 +90,7 @@
                     </div>
                     <div class="modal-body">
 
-                        <asp:PlaceHolder ID="paneError" runat="server" Visible="false">
+                        <asp:PlaceHolder ID="paneError" runat="server">
                             <asp:Label ID="lblReportDetailError" runat="server" class="fs-1 d-flex align-items-center justify-content-center" Style="margin-top: 20%" Text="Only Department of Agriculture and Keels staff are eligible to view aditional details on reports"></asp:Label>
                         </asp:PlaceHolder>
 
@@ -183,17 +183,17 @@
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="lblItemPrice" style="padding-top:5px;">Price:&nbsp;Rs:&nbsp;</label>
-                                                                <asp:Label ID="lblItemPrice" runat="server" Text="125" Font-Bold="True"></asp:Label>
+                                                                <asp:Label ID="lblItemPrice" runat="server" Text="" Font-Bold="True"></asp:Label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                                 <label for="lblItemFlag" style="padding-top:5px;">Flag:&nbsp;</label>
-                                                                <asp:Label ID="lblItemFlag" runat="server" Text="Inedible" Font-Bold="True"></asp:Label>
+                                                                <asp:Label ID="lblItemFlag" runat="server" Text="" Font-Bold="True"></asp:Label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <asp:Button ID="btnBuyNow" class="btn btn-light btn-rounded" runat="server" Text="Buy now" Visible="true" ValidationGroup="" Width="100%" />
+                                                            <asp:Button ID="btnBuyNow" class="btn btn-light btn-rounded" runat="server" Text="Buy now" Visible="true" Width="100%" />
                                                         </div>
                                                     </div>
                                                 </div>
