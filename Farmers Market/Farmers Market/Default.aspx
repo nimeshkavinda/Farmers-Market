@@ -21,7 +21,38 @@
                             "reportId": '<%# Eval("ReportId") %>',
                             "title": '<%# Eval("Title") %>',
                             "desc": '<%# Eval("Description") %>',
+                            "price": '<%# Eval("Price") %>',
                             "content": '<div class="card" style="width: 29rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
+                        }
+                    </ItemTemplate>
+
+                    <SeparatorTemplate>
+                        ,
+                    </SeparatorTemplate>
+
+                </asp:Repeater>
+
+                ];
+
+        </script>
+
+        <script>
+
+            var farmers = [
+
+                <asp:Repeater ID="farmerData" runat="server">
+
+                    <ItemTemplate>
+                        {
+                            "fname": '<%# Eval("FName") %>',
+                            "lname": '<%# Eval("LName") %>',
+                            "gender": '<%# Eval("Gender") %>',
+                            "dob" : '<%# Eval("Dob") %>',
+                            "nic": '<%# Eval("Nic") %>',
+                            "mobile": '<%# Eval("Mobile") %>',
+                            "city": '<%# Eval("City") %>',
+                            "state": '<%# Eval("State") %>',
+                            "zip": '<%# Eval("Zip") %>'
                         }
                     </ItemTemplate>
 
@@ -70,8 +101,21 @@
                             document.getElementById('paneInfoDesc').innerText = data.desc;
                             document.getElementById('paneInfoId').innerText = data.reportId;
                             document.getElementById('paneInfoImg').src = data.img;
+                            //paneBuy data
+                            document.getElementById('lblItemPrice').innerText = "Rs. "+data.price;
                         });
                     })(marker, data);
+
+                }
+
+                for (i = 0; i < farmers.length; i++) {
+                    var farmerData = farmers[i]
+                        (function (marker, farmerData) {
+                            google.maps.event.addListener(marker, "click", function (e) {
+
+                                document.getElementById('testlbl').innerText = farmerData.fname;
+                            });
+                        })(marker, farmerData);
 
                 }
 
@@ -143,7 +187,7 @@
                                 <div class="col-md-4">
                                     <div class="row">
                                         <div class="card bg-light mb-3" style="max-width: 98%">
-                                            <div class="card-header">Farmer details</div>
+                                            <div class="card-header" id="testlbl">Farmer details</div>
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label for="lblFarmerName">Name:&nbsp;</label>
@@ -186,17 +230,10 @@
                                             <div class="card text-white bg-danger mb-3" style="max-width: 98%">
                                                 <div class="card-body">
                                                     <h5 class="card-title">Purchase item</h5>
-                                                    <div class="row p-1">
-                                                        <div class="col-md-4">
+                                                    <div class="row">
+                                                        <div class="col-md-8">
                                                             <div class="form-group">
-                                                                <label for="lblItemPrice" style="padding-top:5px;">Price:&nbsp;Rs:&nbsp;</label>
-                                                                <asp:Label ID="lblItemPrice" runat="server" Text="" Font-Bold="True"></asp:Label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <div class="form-group">
-                                                                <label for="lblItemFlag" style="padding-top:5px;">Flag:&nbsp;</label>
-                                                                <asp:Label ID="lblItemFlag" runat="server" Text="" Font-Bold="True"></asp:Label>
+                                                                <label id="lblItemPrice" style="padding-top:5px;padding-bottom:0!important;font-size:large;font-weight:bold;"></label>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
