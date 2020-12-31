@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Farmers_Market._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    
     <div class="container-fluid" style="padding: 0 !important;margin: 0 !important";>
 
         <div id="googleMap" style="width: 100%; height: 94vh;"></div>
@@ -22,6 +22,15 @@
                             "title": '<%# Eval("Title") %>',
                             "desc": '<%# Eval("Description") %>',
                             "price": '<%# Eval("Price") %>',
+                            "fname": '<%# Eval("FName") %>',
+                            "lname": '<%# Eval("LName") %>',
+                            "gender": '<%# Eval("Gender") %>',
+                            "dob": '<%# Eval("Dob") %>',
+                            "nic": '<%# Eval("Nic") %>',
+                            "mobile": '<%# Eval("Mobile") %>',
+                            "city": '<%# Eval("City") %>',
+                            "state": '<%# Eval("State") %>',
+                            "zip": '<%# Eval("Zip") %>',
                             "content": '<div class="card" style="width: 29rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
                         }
                     </ItemTemplate>
@@ -73,7 +82,15 @@
                             document.getElementById('paneInfoImg').src = data.img;
                             //paneBuy data
                             document.getElementById('lblItemPrice').innerText = "Rs. " + data.price;
-
+                            //farmer data
+                            document.getElementById('lblFarmerName').innerText = "Name: " + data.fname + " " + data.lname;
+                            document.getElementById('lblFarmerGender').innerText = "Gender: " + data.gender;
+                            document.getElementById('lblFarmerDob').innerText = "Date of birth: " + data.dob;
+                            document.getElementById('lblFarmerNic').innerText = "National identity card: " + data.nic;
+                            document.getElementById('lblFarmerMobile').innerText = "Mobile: " + data.mobile;
+                            document.getElementById('lblFarmerCity').innerText = "City: " + data.city;
+                            document.getElementById('lblFarmerState').innerText = "State: " + data.state;
+                            document.getElementById('lblFarmerZip').innerText = "Zip: " + data.zip;
                         });
                     })(marker, data);
 
@@ -147,39 +164,31 @@
                                 <div class="col-md-4">
                                     <div class="row">
                                         <div class="card bg-light mb-3" style="max-width: 98%">
-                                            <div class="card-header" id="testlbl">Farmer details</div>
+                                            <div class="card-header">Farmer details</div>
                                             <div class="card-body">
                                                 <div class="form-group">
-                                                    <label for="lblFarmerName">Name:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerName" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerName"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerGender">Gender:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerGender" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerGender"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerDob">Date of birth:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerDob" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerDob"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerNic">National identity card:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerNic" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerNic"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerMobile">Mobile:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerMobile" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerMobile"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerCity">City:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerCity" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerCity"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerState">State:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerState" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerState"></label>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="lblFarmerZip">Zip:&nbsp;</label>
-                                                    <asp:Label ID="lblFarmerZip" runat="server" Text=""></asp:Label>
+                                                    <label id="lblFarmerZip"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,7 +206,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <asp:Button ID="btnBuyNow" class="btn btn-light btn-rounded" runat="server" Text="Buy now" Visible="true" Width="100%" />
+                                                            <asp:Button ID="btnBuyNow" class="btn btn-light btn-rounded" runat="server" Text="Buy now" Visible="true" Width="100%" OnClick="btnBuyNow_Click" />
                                                         </div>
                                                     </div>
                                                 </div>
