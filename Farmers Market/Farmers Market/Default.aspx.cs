@@ -20,7 +20,7 @@ namespace Farmers_Market
 
             if (!this.IsPostBack)
             {
-                DataTable dt = this.getData(@"SELECT * FROM Report");
+                DataTable dt = this.getData(@"SELECT * FROM Report JOIN Farmer ON Report.Email = Farmer.Email");
                 reportMarker.DataSource = dt;
                 reportMarker.DataBind();
 
@@ -133,6 +133,37 @@ namespace Farmers_Market
                 //lblError.Text = "You need to be logged in as Keels staff to contact farmers";
                 //Response.Redirect("~/KeelsLogin");
 
+            }
+
+        }
+
+        protected void btnBuyNow_Click(object sender, EventArgs e)
+        {
+            if(reportIdValue.Value != null)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Item has been added to your purchase list');", true);
+            }
+            else
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('aa');", true);
+            }
+
+            string status = "Sold";
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "UPDATE Report SET Status='" + status + "', Buyer='" + Session["keels"].ToString() + "' WHERE ReportId ='" + reportIdValue.Value + "'";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Item has been added to your purchase list');", true);
+            }
+
+            catch (Exception)
+            {
+                
             }
 
         }
