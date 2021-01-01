@@ -58,7 +58,12 @@ namespace Farmers_Market
 
         protected void btnProfile_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/");
+            Response.Redirect("~/Profile");
+        }
+
+        protected void btnPurchaseList_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/PurchaseList");
         }
     }
 }

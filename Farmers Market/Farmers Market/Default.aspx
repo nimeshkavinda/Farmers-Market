@@ -22,6 +22,7 @@
                             "title": '<%# Eval("Title") %>',
                             "desc": '<%# Eval("Description") %>',
                             "price": '<%# Eval("Price") %>',
+                            "flag": '<%# Eval("Flag") %>',
                             "fname": '<%# Eval("FName") %>',
                             "lname": '<%# Eval("LName") %>',
                             "gender": '<%# Eval("Gender") %>',
@@ -31,7 +32,7 @@
                             "city": '<%# Eval("City") %>',
                             "state": '<%# Eval("State") %>',
                             "zip": '<%# Eval("Zip") %>',
-                            "content": '<div class="card" style="width: 29rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Flag as inedible</button></div></div></div>'
+                            "content": '<div class="card" style="width: 27rem;"><img src="<%# "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("Image"))%>" class="card-img-top" style="margin-top:0.5em;border-radius:0.5em;object-fit: cover;width: 100%;height: 200px;" /><div class="card-body"><h5 class="card-title"><%# Eval("Title") %></h5><p class="card-text"><%# Eval("Description") %></p></div><ul class="list-group list-group-flush"><li class="list-group-item"><div class="p-2 badge bg-primary text-wrap" style="font-size: 16px;width: 8em;height: 2rem;">Rs. <%# Eval("Price") %></div></li></ul><div class="card-body"><div class="btn-group shadow-0" role="group"><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalBuy">View Report</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalContact">Contact Farmer</button><button type="button" class="btn btn-link" data-mdb-color="dark" data-mdb-toggle="modal" data-mdb-target="#modalFlag">Flag report</button></div></div></div>'
                         }
                     </ItemTemplate>
 
@@ -62,11 +63,13 @@
 
                 for (i = 0; i < markers.length; i++) {
                     var data = markers[i]
+                    var markerColor = data.flag
                     var myLatlng = new google.maps.LatLng(data.lat, data.lng);
                     var marker = new google.maps.Marker({
                         position: myLatlng,
                         map: map,
-                        title: data.title
+                        title: data.title,
+                        icon: markerColor
                     });
 
                     (function (marker, data) {
@@ -263,6 +266,43 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                         <asp:Button ID="btnSendMessage" class="btn btn-primary" runat="server" Text="Send message" ValidationGroup="farmerContactForm" OnClick="btnSendMessage_Click" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Modal: Flag-->
+        <div
+            class="modal fade"
+            id="modalFlag"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalFlagTitle">Flag report</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-mdb-dismiss="modal"
+                            aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <asp:PlaceHolder ID="paneFlagBodyError" runat="server">
+                            <h6>You need to be logged in as Keels staff to flag reports
+                            </h6>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="paneFlagBody" runat="server">
+                            <h6>Flag reports for the quality of the harvest. This will help the respective parties to analyze reports.
+                            </h6>
+                            <asp:Button ID="btnReportGood" type="button" class="btn btn-success btn-rounded" runat="server" Text="Flag as edible" OnClick="btnReportGood_Click" />
+                            <asp:Button ID="btnReportBad" type="button" class="btn btn-danger btn-rounded" runat="server" Text="Flag as inedible" OnClick="btnReportBad_Click" />
+                        </asp:PlaceHolder>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
