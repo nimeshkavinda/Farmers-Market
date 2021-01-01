@@ -32,6 +32,7 @@ namespace Farmers_Market
                 loggedUser.Text = Session["keels"].ToString();
                 userControls.Visible = false;
                 userAvatar.Visible = true;
+                btnPurchaseList.Visible = true;
 
             }
             if (Session["webmaster"] != null)
