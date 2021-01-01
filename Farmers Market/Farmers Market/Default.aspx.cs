@@ -155,7 +155,7 @@ namespace Farmers_Market
 
             catch (Exception)
             {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to purchase the item');", true);
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to add the item to the purchase list');", true);
             }
 
         }

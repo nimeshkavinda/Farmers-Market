@@ -22,6 +22,7 @@
                             "title": '<%# Eval("Title") %>',
                             "desc": '<%# Eval("Description") %>',
                             "price": '<%# Eval("Price") %>',
+                            "flag": '<%# Eval("Flag") %>',
                             "fname": '<%# Eval("FName") %>',
                             "lname": '<%# Eval("LName") %>',
                             "gender": '<%# Eval("Gender") %>',
@@ -66,7 +67,11 @@
                     var marker = new google.maps.Marker({
                         position: myLatlng,
                         map: map,
-                        title: data.title
+                        title: data.title,
+                        icon: {
+                            url: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+                            scaledSize: new google.maps.Size(50, 50)
+                        }
                     });
 
                     (function (marker, data) {
