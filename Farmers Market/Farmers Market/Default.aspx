@@ -82,6 +82,7 @@
                             document.getElementById('paneInfoImg').src = data.img;
                             //paneBuy data
                             document.getElementById('lblItemPrice').innerText = "Rs. " + data.price;
+                            $('#<%= buyReportId.ClientID %>').val(data.reportId);
                             //farmer data
                             document.getElementById('lblFarmerName').innerText = "Name: " + data.fname + " " + data.lname;
                             document.getElementById('lblFarmerGender').innerText = "Gender: " + data.gender;
@@ -268,5 +269,7 @@
         </div>
 
     </div>
+
+    <asp:HiddenField ID="buyReportId" runat="server" />
 
 </asp:Content>
