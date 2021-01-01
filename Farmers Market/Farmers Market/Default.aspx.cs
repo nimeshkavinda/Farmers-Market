@@ -139,19 +139,11 @@ namespace Farmers_Market
 
         protected void btnBuyNow_Click(object sender, EventArgs e)
         {
-            if(reportIdValue.Value != null)
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Item has been added to your purchase list');", true);
-            }
-            else
-            {
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('aa');", true);
-            }
 
             string status = "Sold";
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
-            String qry = "UPDATE Report SET Status='" + status + "', Buyer='" + Session["keels"].ToString() + "' WHERE ReportId ='" + reportIdValue.Value + "'";
+            String qry = "UPDATE Report SET Status='" + status + "', Buyer='" + Session["keels"].ToString() + "' WHERE ReportId ='" + buyReportId.Value + "'";
             SqlCommand cmd = new SqlCommand(qry, con);
 
             try
@@ -163,7 +155,7 @@ namespace Farmers_Market
 
             catch (Exception)
             {
-                
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to purchase the item');", true);
             }
 
         }
