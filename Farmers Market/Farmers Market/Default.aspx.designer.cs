@@ -114,22 +114,22 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.Button btnSendMessage;
 
         /// <summary>
-        /// Button1 control.
+        /// btnReportGood control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnReportGood;
 
         /// <summary>
-        /// Button2 control.
+        /// btnReportBad control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button btnReportBad;
 
         /// <summary>
         /// buyReportId control.

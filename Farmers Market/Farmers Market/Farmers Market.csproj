@@ -184,6 +184,7 @@
     <Content Include="ViewReport.aspx" />
     <Content Include="Analysis.aspx" />
     <Content Include="Profile.aspx" />
+    <Content Include="PurchaseList.aspx" />
     <Content Include="WebMasterLogin.aspx" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
@@ -409,6 +410,13 @@
     </Compile>
     <Compile Include="Profile.aspx.designer.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseList.aspx.cs">
+      <DependentUpon>PurchaseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PurchaseList.aspx.designer.cs">
+      <DependentUpon>PurchaseList.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMasterLogin.aspx.cs">
       <DependentUpon>WebMasterLogin.aspx</DependentUpon>

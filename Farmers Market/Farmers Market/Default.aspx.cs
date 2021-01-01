@@ -159,5 +159,15 @@ namespace Farmers_Market
             }
 
         }
+
+        protected void btnReportGood_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnReportBad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

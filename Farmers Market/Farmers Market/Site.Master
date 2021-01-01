@@ -129,7 +129,7 @@
                                             <asp:Button ID="btnViewReport" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnViewReport_Click" Text="Your Reports" CausesValidation="false" Visible="false" />
                                         </a></li>
                                         <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
-                                            <asp:Button ID="btnPurchaseList" runat="server" BorderStyle="None" Style="background-color: transparent;" Text="Your Purchases" CausesValidation="false" Visible="false" />
+                                            <asp:Button ID="btnPurchaseList" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnPurchaseList_Click" Text="Your Purchases" CausesValidation="false" Visible="false" />
                                         </a></li>
                                         <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
                                             <asp:Button ID="btnProfile" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnProfile_Click" Text="Profile" CausesValidation="false" Visible="false" />

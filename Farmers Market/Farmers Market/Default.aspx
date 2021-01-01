@@ -293,8 +293,8 @@
                         <h6>
                             Flag reports for the quality of the harvest. This will help the respective parties to analyze reports.
                         </h6>
-                        <asp:Button ID="Button1" type="button" class="btn btn-success btn-rounded" runat="server" Text="Flag as good" />
-                        <asp:Button ID="Button2" type="button" class="btn btn-danger btn-rounded" runat="server" Text="Flag as inedible" />
+                        <asp:Button ID="btnReportGood" type="button" class="btn btn-success btn-rounded" runat="server" Text="Flag as edible" OnClick="btnReportGood_Click" />
+                        <asp:Button ID="btnReportBad" type="button" class="btn btn-danger btn-rounded" runat="server" Text="Flag as inedible" OnClick="btnReportBad_Click" />
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
