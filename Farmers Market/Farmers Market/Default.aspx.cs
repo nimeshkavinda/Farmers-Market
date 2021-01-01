@@ -29,6 +29,8 @@ namespace Farmers_Market
 
                     paneError.Visible = true;
                     paneInfo.Visible = false;
+                    paneFlagBodyError.Visible = true;
+                    paneFlagBody.Visible = false;
 
                 }
 
@@ -38,6 +40,8 @@ namespace Farmers_Market
                     paneError.Visible = false;
                     paneInfo.Visible = true;
                     paneBuy.Visible = true;
+                    paneFlagBodyError.Visible = false;
+                    paneFlagBody.Visible = true;
 
                 }
 
@@ -47,6 +51,8 @@ namespace Farmers_Market
                     paneError.Visible = false;
                     paneInfo.Visible = true;
                     paneBuy.Visible = false;
+                    paneFlagBodyError.Visible = true;
+                    paneFlagBody.Visible = false;
 
                 }
 
@@ -163,10 +169,48 @@ namespace Farmers_Market
         protected void btnReportGood_Click(object sender, EventArgs e)
         {
 
+            string markerIco = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "UPDATE Report SET Flag='" + markerIco + "' WHERE ReportId ='" + buyReportId.Value + "'";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Item has been flagged as edible');", true);
+                Response.Redirect("~/");
+            }
+
+            catch (Exception)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to flag the item');", true);
+            }
+
         }
 
         protected void btnReportBad_Click(object sender, EventArgs e)
         {
+
+            string markerIco = "http://maps.google.com/mapfiles/ms/icons/caution.png";
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "UPDATE Report SET Flag='" + markerIco + "' WHERE ReportId ='" + buyReportId.Value + "'";
+            SqlCommand cmd = new SqlCommand(qry, con);
+
+            try
+            {
+                con.Open();
+                cmd.ExecuteNonQuery();
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Item has been flagged as in-edible');", true);
+                Response.Redirect("~/");
+            }
+
+            catch (Exception)
+            {
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to flag the item');", true);
+            }
 
         }
     }

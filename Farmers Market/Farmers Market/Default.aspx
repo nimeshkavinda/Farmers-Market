@@ -290,11 +290,16 @@
                         </button>
                     </div>
                     <div class="modal-body text-center">
-                        <h6>
-                            Flag reports for the quality of the harvest. This will help the respective parties to analyze reports.
-                        </h6>
-                        <asp:Button ID="btnReportGood" type="button" class="btn btn-success btn-rounded" runat="server" Text="Flag as edible" OnClick="btnReportGood_Click" />
-                        <asp:Button ID="btnReportBad" type="button" class="btn btn-danger btn-rounded" runat="server" Text="Flag as inedible" OnClick="btnReportBad_Click" />
+                        <asp:PlaceHolder ID="paneFlagBodyError" runat="server">
+                            <h6>You need to be logged in as Keels staff to flag reports
+                            </h6>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="paneFlagBody" runat="server">
+                            <h6>Flag reports for the quality of the harvest. This will help the respective parties to analyze reports.
+                            </h6>
+                            <asp:Button ID="btnReportGood" type="button" class="btn btn-success btn-rounded" runat="server" Text="Flag as edible" OnClick="btnReportGood_Click" />
+                            <asp:Button ID="btnReportBad" type="button" class="btn btn-danger btn-rounded" runat="server" Text="Flag as inedible" OnClick="btnReportBad_Click" />
+                        </asp:PlaceHolder>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
