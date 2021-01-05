@@ -2,7 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
-    <div class="container-fluid" style="padding: 0 !important;margin: 0 !important";>
+    <div class="container-fluid img-fluid" id="landingPage" style="padding: 0 !important;margin: 0 !important";>
 
         <div id="googleMap" style="width: 100%; height: 94vh;"></div>
         
