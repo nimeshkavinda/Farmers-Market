@@ -60,7 +60,7 @@
                         <div class="chart-area">
                             <asp:Chart ID="chartPrice" runat="server" Width="450px">
                                 <Series>
-                                    <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
+                                    <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Line" YValuesPerPoint="4">
                                     </asp:Series>
                                 </Series>
                                 <ChartAreas>
