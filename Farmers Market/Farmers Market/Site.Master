@@ -1,0 +1,253 @@
+﻿﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Farmers_Market.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>- Farmers Market</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link
+        href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+        rel="stylesheet" />
+    <!-- MDB -->
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/2.2.1/mdb.min.css"
+        rel="stylesheet" />
+
+    <!-- MDB -->
+    <script
+        type="text/javascript"
+        src="Scripts/mdb.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFb4ebCaXgIKAzNopg8pVHCNEu7l8qp7o&callback=myMap"></script>
+    <script src="Scripts/mdbmodal.js"></script>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+                <!-- Container wrapper -->
+                <div class="container">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand" runat="server" href="~/">Farmer's Market</a>
+
+                    <!-- Toggle button -->
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+
+                    <!-- Collapsible wrapper -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <!-- Left links -->
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <asp:PlaceHolder ID="menuItems" runat="server">
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/CreateReport">Create a Report</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/Analysis">Analysis</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/About">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" runat="server" href="~/Contact">Contact</a>
+                                </li>
+                            </asp:PlaceHolder>
+                        </ul>
+                    </div>
+                    <!-- Left links -->
+
+                    <!--User controls-->
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <!-- Avatar -->
+                        <asp:PlaceHolder ID="userAvatar" runat="server" Visible="false">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle d-flex align-items-center"
+                                        href="#"
+                                        id="navbarDropdownMenuLink"
+                                        role="button"
+                                        data-mdb-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <img
+                                            src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
+                                            class="rounded-circle"
+                                            height="22"
+                                            alt="" />
+                                        <asp:Label ID="loggedUser" runat="server" Text="" Style="margin-left: 8px;"></asp:Label>
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
+                                            <asp:Button ID="btnViewReport" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnViewReport_Click" Text="Your Reports" CausesValidation="false" Visible="false" />
+                                        </a></li>
+                                        <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
+                                            <asp:Button ID="btnPurchaseList" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnPurchaseList_Click" Text="Your Purchases" CausesValidation="false" Visible="false" />
+                                        </a></li>
+                                        <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
+                                            <asp:Button ID="btnProfile" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnProfile_Click" Text="Profile" CausesValidation="false" Visible="false" />
+                                        </a></li>
+                                        <li><a class="dropdown-item" style="padding:0!important;margin:0!important;">
+                                            <asp:Button ID="btnLogout" runat="server" BorderStyle="None" Style="background-color: transparent;" OnClick="btnLogout_Click" Text="Logout" CausesValidation="false" />
+                                        </a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="userControls" runat="server">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Login</a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" runat="server" href="~/FarmerLogin">Farmer</a>
+                                        <a class="dropdown-item" runat="server" href="~/DoaLogin">DoA</a>
+                                        <a class="dropdown-item" runat="server" href="~/KeelsLogin">Keels</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" runat="server" href="~/WebMasterLogin">WebMaster</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" runat="server" href="~/SignUp">Sign Up</a>
+                                </li>
+                            </ul>
+                        </asp:PlaceHolder>
+
+                    </div>
+
+                    <!-- Collapsible wrapper -->
+                </div>
+                <!-- Container wrapper -->
+            </nav>
+            <!-- Navbar -->
+        </header>
+
+        <!--Content-->
+        <div class="body-content" style="padding: 0 !important;margin: 0 !important;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+
+        <!--Footer-->
+        <footer class="bg-primary text-white text-center text-lg-start">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!--Grid row-->
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Footer Content</h5>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+          voluptatem veniam, est atque cumque eum delectus sint!
+                        </p>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase">Links</h5>
+
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                        <h5 class="text-uppercase mb-0">Links</h5>
+
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!" class="text-white">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!" class="text-white">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Grid column-->
+                </div>
+                <!--Grid row-->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </ footer>
+
+    </form>
+
+</body>
+</html>

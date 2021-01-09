@@ -1,0 +1,55 @@
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Farmers Market.dll.config
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Farmers Market.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Farmers Market.pdb
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csc.exe
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csc.exe.config
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csc.rsp
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csi.exe
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csi.exe.config
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\csi.rsp
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Buffers.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Collections.Immutable.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Memory.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Numerics.Vectors.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Reflection.Metadata.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\vbc.exe
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\vbc.exe.config
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\vbc.rsp
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\VBCSCompiler.exe
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\roslyn\VBCSCompiler.exe.config
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Antlr3.Runtime.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\AspNet.ScriptManager.jQuery.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Newtonsoft.Json.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\System.Web.Optimization.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\WebGrease.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Newtonsoft.Json.xml
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\System.Web.Optimization.xml
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Antlr3.Runtime.pdb
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csproj.CopyComplete
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.dll
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.pdb
+D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csprojAssemblyReference.cache
