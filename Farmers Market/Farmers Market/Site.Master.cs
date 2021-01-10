@@ -25,6 +25,7 @@ namespace Farmers_Market
                 loggedUser.Text = Session["doa"].ToString();
                 userControls.Visible = false;
                 userAvatar.Visible = true;
+                btnProfile.Visible = true;
 
             }
             if (Session["keels"] != null)
@@ -33,6 +34,7 @@ namespace Farmers_Market
                 userControls.Visible = false;
                 userAvatar.Visible = true;
                 btnPurchaseList.Visible = true;
+                btnProfile.Visible = true;
 
             }
             if (Session["webmaster"] != null)

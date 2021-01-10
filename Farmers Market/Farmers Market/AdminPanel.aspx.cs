@@ -45,7 +45,7 @@ namespace Farmers_Market
             string mobile = doaMobile.Text;
             string city = doaCity.Text;
             string state = doaState.Text;
-            string zip = doaState.Text;
+            string zip = doaZip.Text;
             string password = fname + mobile;
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
@@ -98,7 +98,7 @@ namespace Farmers_Market
             String mobile = keelsMobile.Text;
             String city = keelsCity.Text;
             String state = keelsState.Text;
-            String zip = keelsState.Text;
+            String zip = keelsZip.Text;
             String password = fname + mobile;
 
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
