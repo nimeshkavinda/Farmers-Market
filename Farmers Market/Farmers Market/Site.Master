@@ -183,32 +183,34 @@
                 <div class="row">
                     <!--Grid column-->
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Footer Content</h5>
+                        <h5 class="text-uppercase">Farmer's Market</h5>
 
                         <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
+                            Farmer's Market is a initiative by Department of Agriculture in-collaboration with Keels Private Limited to bring a modern platform for the Farmers to list and sell their harvests online.
+                            Farmers are encouraged to use the platform for all kind of needs and can be used to be in-touch with the authorities and have their harvest quality checked-up.
                         </p>
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase">Links</h5>
+                        <h5 class="text-uppercase">Site Map</h5>
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a runat="server" href="~/" class="text-white">Home</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a runat="server" href="~/CreateReport" class="text-white">Create a Report</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 3</a>
+                                <a runat="server" href="~/Analysis" class="text-white">Analysis</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a runat="server" href="~/About" class="text-white">About</a>
+                            </li>
+                            <li>
+                                <a runat="server" href="~/Contact" class="text-white">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -216,20 +218,20 @@
 
                     <!--Grid column-->
                     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 class="text-uppercase mb-0">Links</h5>
+                        <h5 class="text-uppercase">Get Started</h5>
 
                         <ul class="list-unstyled">
                             <li>
-                                <a href="#!" class="text-white">Link 1</a>
+                                <a runat="server" href="~/FarmerLogin" class="text-white">Login as Farmer</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 2</a>
+                                <a runat="server" href="~/DoaLogin" class="text-white">Login as DoA</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 3</a>
+                                <a runat="server" href="~/KeelsLogin" class="text-white">Login as Keels</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Link 4</a>
+                                <a runat="server" href="~/SignUp" class="text-white">Sign Up</a>
                             </li>
                         </ul>
                     </div>
@@ -241,8 +243,8 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-                © 2020 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                © 2021 Farmer's Market.
+    <a class="text-white" style="text-decoration:none;">A project of Department of Agriculture in-collaboration with Keels.</a>
             </div>
             <!-- Copyright -->
         </ footer>
