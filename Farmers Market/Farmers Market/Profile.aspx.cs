@@ -30,6 +30,7 @@ namespace Farmers_Market
                 DataSet ds = new DataSet();
                 sda.Fill(ds, "DoA");
 
+                string username = ds.Tables[0].Rows[0][0].ToString();
                 string fname = ds.Tables[0].Rows[0][2].ToString();
                 string lname = ds.Tables[0].Rows[0][3].ToString();
                 string designation = ds.Tables[0].Rows[0][4].ToString();
@@ -39,6 +40,7 @@ namespace Farmers_Market
                 string state = ds.Tables[0].Rows[0][8].ToString();
                 string zip = ds.Tables[0].Rows[0][9].ToString();
 
+                loggedInStaff.Text = username;
                 lblName.Text = (fname + " " + lname);
                 lblDesignation.Text = designation;
                 lblEmail.Text = email;
@@ -88,6 +90,91 @@ namespace Farmers_Market
             {
 
                 Response.Redirect("~/");
+
+            }
+
+        }
+
+        protected void btnProfilePassword_Click(object sender, EventArgs e)
+        {
+
+            if (Session["doa"] != null)
+            {
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+                String qry = "SELECT * FROM DoA WHERE Username='" + Session["doa"].ToString() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+                DataSet ds = new DataSet();
+                sda.Fill(ds, "DoA");
+
+                string currentPassword = ds.Tables[0].Rows[0][1].ToString();
+
+                if(txtCurrentPass.Text == currentPassword)
+                {
+
+                    string newPassword = txtNewPass.Text;
+
+                    String qryUpPw = "UPDATE DoA SET Password='" + newPassword + "' WHERE Username ='" + Session["doa"].ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(qryUpPw, con);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Your password has been changed');", true);
+                    }
+
+                    catch (Exception)
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to changed your password');", true);
+                    }
+                    finally
+                    {
+                        txtCurrentPass.Text = "";
+                        txtNewPass.Text = "";
+                        txtConPass.Text = "";
+                    }
+
+                }
+                else
+                {
+
+                    lblError.Text = "Current password does not match";
+
+                }
+
+            }
+
+            else if (Session["keels"] != null)
+            {
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+                String qry = "SELECT * FROM Keels WHERE Username='" + Session["keels"].ToString() + "'";
+                SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+                DataSet ds = new DataSet();
+                sda.Fill(ds, "Keels");
+
+                string currentPassword = ds.Tables[0].Rows[0][1].ToString();
+
+                if (txtCurrentPass.Text == currentPassword)
+                {
+
+
+
+                }
+                else
+                {
+
+                    lblError.Text = "Current password does not match";
+
+                }
+
+            }
+
+            else
+            {
+
+                lblError.Text = "Something went wrong";
 
             }
 
