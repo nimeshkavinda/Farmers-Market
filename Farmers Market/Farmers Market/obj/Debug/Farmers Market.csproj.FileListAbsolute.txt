@@ -52,4 +52,3 @@ D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farme
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csproj.CopyComplete
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.dll
 D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.pdb
-D:\Documents\GitHub\Farmers-Market\Farmers Market\Farmers Market\obj\Debug\Farmers Market.csprojAssemblyReference.cache

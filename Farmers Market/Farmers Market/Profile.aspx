@@ -20,37 +20,45 @@
             </nav>
         </div>
         <div class="row" style="padding-top:0!important;">
-            <div class="col-md-5 p-5">
-                <div class="form-group">
-                    <label for="lblName">Name</label><br />
-                    <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
+            <div class="col-md-5 p-4">
+                <div class="row">
+                    <div class="card bg-light mb-3" style="max-width: 98%">
+                        <div class="card-header">Staff details</div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="lblName">Name</label><br />
+                                <asp:Label ID="lblName" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblDesignation">Designation</label><br />
+                                <asp:Label ID="lblDesignation" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblEmail">Email</label><br />
+                                <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblMobile">Mobile</label><br />
+                                <asp:Label ID="lblMobile" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblCity">City</label><br />
+                                <asp:Label ID="lblCity" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblState">State</label><br />
+                                <asp:Label ID="lblState" runat="server" Text=""></asp:Label>
+                            </div>
+                            <div class="form-group">
+                                <label for="lblZip">Zip</label><br />
+                                <asp:Label ID="lblZip" runat="server" Text=""></asp:Label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="lblDesignation">Designation</label><br />
-                    <asp:Label ID="lblDesignation" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="form-group">
-                    <label for="lblEmail">Email</label><br />
-                    <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="form-group">
-                    <label for="lblMobile">Mobile</label><br />
-                    <asp:Label ID="lblMobile" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="form-group">
-                    <label for="lblCity">City</label><br />
-                    <asp:Label ID="lblCity" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="form-group">
-                    <label for="lblState">State</label><br />
-                    <asp:Label ID="lblState" runat="server" Text=""></asp:Label>
-                </div>
-                <div class="form-group">
-                    <label for="lblZip">Zip</label><br />
-                    <asp:Label ID="lblZip" runat="server" Text=""></asp:Label>
-                </div>
+
             </div>
-            <div class="col-md-7 p-5">
+            <div class="col-md-7 p-4">
                 <div class="profileForm">
                     <div class="form-group">
                         <label for="txtCurrentPass">Current Password</label>
