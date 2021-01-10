@@ -110,7 +110,7 @@
             <div class="col-lg-5 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Prices</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Sell Ratio</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
@@ -135,7 +135,7 @@
             <div class="col-lg-7 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Harvest Types</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Flags</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">

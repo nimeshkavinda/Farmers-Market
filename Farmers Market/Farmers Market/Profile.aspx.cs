@@ -133,6 +133,7 @@ namespace Farmers_Market
                         txtCurrentPass.Text = "";
                         txtNewPass.Text = "";
                         txtConPass.Text = "";
+                        lblError.Text = "";
                     }
 
                 }
@@ -159,7 +160,29 @@ namespace Farmers_Market
                 if (txtCurrentPass.Text == currentPassword)
                 {
 
+                    string newPassword = txtNewPass.Text;
 
+                    String qryUpPw = "UPDATE Keels SET Password='" + newPassword + "' WHERE Username ='" + Session["keels"].ToString() + "'";
+                    SqlCommand cmd = new SqlCommand(qryUpPw, con);
+
+                    try
+                    {
+                        con.Open();
+                        cmd.ExecuteNonQuery();
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Your password has been changed');", true);
+                    }
+
+                    catch (Exception)
+                    {
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "s", "window.alert('Failed to changed your password');", true);
+                    }
+                    finally
+                    {
+                        txtCurrentPass.Text = "";
+                        txtNewPass.Text = "";
+                        txtConPass.Text = "";
+                        lblError.Text = "";
+                    }
 
                 }
                 else
