@@ -33,6 +33,15 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.Label mostItemPrice;
 
         /// <summary>
+        /// soldItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label soldItems;
+
+        /// <summary>
         /// chartPrice control.
         /// </summary>
         /// <remarks>
@@ -51,21 +60,21 @@ namespace Farmers_Market
         protected global::System.Web.UI.DataVisualization.Charting.Chart chartItemType;
 
         /// <summary>
-        /// chart1 control.
+        /// chartFarmerLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart chart1;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart chartFarmerLocation;
 
         /// <summary>
-        /// chart2 control.
+        /// chartFlag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart chart2;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart chartFlag;
     }
 }

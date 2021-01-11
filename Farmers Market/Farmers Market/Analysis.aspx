@@ -18,7 +18,7 @@
             </nav>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -44,6 +44,21 @@
                                 </div>
                             </div>
                             <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col mr-2">
+                                <div class="text-uppercase text-secondary font-weight-bold text-xs mb-1"><span>Total sold items</span></div>
+                                <div class="text-dark font-weight-bold h5 mb-0">
+                                    <asp:Label ID="soldItems" runat="server" Text=""></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-auto"><i class="fas fa-coins fa-2x text-gray-300"></i></div>
                         </div>
                     </div>
                 </div>
@@ -65,9 +80,9 @@
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="chartPriceArea">
-                                        <AxisX Title="Item">
+                                        <AxisX>
                                         </AxisX>
-                                        <AxisY Title="Price (in rupees)">
+                                        <AxisY>
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
@@ -83,16 +98,16 @@
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chartItemType" runat="server" Width="400px">
+                            <asp:Chart ID="chartItemType" runat="server" Width="450px">
                                 <Series>
                                     <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
                                     </asp:Series>
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="chartItemTypeArea">
-                                        <AxisX Title="Item">
+                                        <AxisX Title="Location">
                                         </AxisX>
-                                        <AxisY Title="Price">
+                                        <AxisY Title="No. of Farmers">
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
@@ -110,20 +125,20 @@
             <div class="col-lg-5 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Sell Ratio</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Farmer Locations</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chart1" runat="server" Width="450px">
+                            <asp:Chart ID="chartFarmerLocation" runat="server" Width="450px">
                                 <Series>
-                                    <asp:Series Name="chartPriceSeries" ChartArea="chartPriceArea" ChartType="Bar" YValuesPerPoint="4">
+                                    <asp:Series Name="chartFarmerLocationSeries" ChartArea="chartFarmerLocationArea" ChartType="Bar" YValuesPerPoint="4">
                                     </asp:Series>
                                 </Series>
                                 <ChartAreas>
-                                    <asp:ChartArea Name="chartPriceArea">
-                                        <AxisX Title="Item">
+                                    <asp:ChartArea Name="chartFarmerLocationArea">
+                                        <AxisX Title="City">
                                         </AxisX>
-                                        <AxisY Title="Price (in rupees)">
+                                        <AxisY Title="No. of Farmers">
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
@@ -135,25 +150,25 @@
             <div class="col-lg-7 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Flags</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Quality</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chart2" runat="server" Width="400px">
+                            <asp:Chart ID="chartFlag" runat="server" Width="520px" Palette="Fire">
                                 <Series>
-                                    <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
+                                    <asp:Series Name="chartFlagSeries" ChartArea="chartFlagArea" ChartType="Doughnut" YValuesPerPoint="4" Legend="Flag Type">
                                     </asp:Series>
                                 </Series>
                                 <ChartAreas>
-                                    <asp:ChartArea Name="chartItemTypeArea">
-                                        <AxisX Title="Item">
+                                    <asp:ChartArea Name="chartFlagArea">
+                                        <AxisX>
                                         </AxisX>
-                                        <AxisY Title="Price">
+                                        <AxisY>
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
                                 <Legends>
-                                    <asp:Legend Name="Harvest Type">
+                                    <asp:Legend Name="Flag Type">
                                     </asp:Legend>
                                 </Legends>
                             </asp:Chart>

@@ -21,9 +21,11 @@ namespace Farmers_Market
 
                 getMostPrice();
                 getMostType();
+                getSoldItems();
                 getPriceChartData();
                 getItemTypeChartData();
-
+                getLocationChartData();
+                getFlagChartData();
             }
 
         }
@@ -55,6 +57,21 @@ namespace Farmers_Market
 
             string type = ds.Tables[0].Rows[0]["HarvestType"].ToString();
             mostItemType.Text = type;
+
+        }
+
+        private void getSoldItems()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "SELECT COUNT(Status) AS soldItems FROM Report WHERE Status='Sold'";
+
+            SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds, "Report");
+
+            string sold = ds.Tables[0].Rows[0]["soldItems"].ToString();
+            soldItems.Text = sold;
 
         }
 
@@ -117,6 +134,70 @@ namespace Farmers_Market
             }
             catch (SqlException) 
             { 
+
+            }
+
+        }
+
+        private void getLocationChartData()
+        {
+            try
+            {
+
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT City, COUNT(*) AS noOfFarmers FROM Report JOIN Farmer ON Report.Email=Farmer.Email GROUP BY City", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartFarmerLocationSeries = chartFarmerLocation.Series["chartFarmerLocationSeries"];
+
+                    while (sdr.Read())
+                    {
+                        chartFarmerLocationSeries.Points.AddXY(sdr["City"].ToString(),
+                            sdr["noOfFarmers"]);
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+
+        }
+
+        private void getFlagChartData()
+        {
+            try
+            {
+
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT CASE Flag WHEN 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' THEN 'Flagged as edible' WHEN 'http://maps.google.com/mapfiles/ms/icons/caution.png' THEN 'Flagged as in-edible' ELSE 'Not yet flagged' END AS flagName, COUNT(*) AS noOfTypes FROM Report GROUP BY Flag", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartFlagSeries = chartFlag.Series["chartFlagSeries"];
+
+                    while (sdr.Read())
+                    {
+
+                        chartFlagSeries.Points.AddXY(sdr["flagName"],
+                            sdr["noOfTypes"]);
+
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
 
             }
 
