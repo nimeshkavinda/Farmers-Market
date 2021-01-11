@@ -60,12 +60,12 @@ namespace Farmers_Market
         protected global::System.Web.UI.DataVisualization.Charting.Chart chartFarmerLocation;
 
         /// <summary>
-        /// chart2 control.
+        /// chartFlag control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart chart2;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart chartFlag;
     }
 }

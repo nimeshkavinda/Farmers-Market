@@ -139,21 +139,21 @@
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chart2" runat="server" Width="400px">
+                            <asp:Chart ID="chartFlag" runat="server" Width="400px">
                                 <Series>
-                                    <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
+                                    <asp:Series Name="chartFlagSeries" ChartArea="chartFlagArea" ChartType="Doughnut" YValuesPerPoint="4" Legend="Flag Type">
                                     </asp:Series>
                                 </Series>
                                 <ChartAreas>
-                                    <asp:ChartArea Name="chartItemTypeArea">
-                                        <AxisX Title="Item">
+                                    <asp:ChartArea Name="chartFlagArea">
+                                        <AxisX>
                                         </AxisX>
-                                        <AxisY Title="Price">
+                                        <AxisY>
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
                                 <Legends>
-                                    <asp:Legend Name="Harvest Type">
+                                    <asp:Legend Name="Flag Type">
                                     </asp:Legend>
                                 </Legends>
                             </asp:Chart>

@@ -23,7 +23,8 @@ namespace Farmers_Market
                 getMostType();
                 getPriceChartData();
                 getItemTypeChartData();
-
+                getLocationChartData();
+                getFlagChartData();
             }
 
         }
@@ -117,6 +118,70 @@ namespace Farmers_Market
             }
             catch (SqlException) 
             { 
+
+            }
+
+        }
+
+        private void getLocationChartData()
+        {
+            try
+            {
+
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT Title, Price FROM Report", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartFarmerLocationSeries = chartFarmerLocation.Series["chartFarmerLocationSeries"];
+
+                    while (sdr.Read())
+                    {
+                        chartFarmerLocationSeries.Points.AddXY(sdr["Title"].ToString(),
+                            sdr["Price"]);
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+
+            }
+
+        }
+
+        private void getFlagChartData()
+        {
+            try
+            {
+
+                string cs = ConfigurationManager.ConnectionStrings["conString"].ConnectionString;
+                using (SqlConnection con = new SqlConnection(cs))
+                {
+
+                    SqlCommand cmd = new
+                        SqlCommand("SELECT CASE Flag WHEN 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' THEN 'Flagged as edible' WHEN 'http://maps.google.com/mapfiles/ms/icons/caution.png' THEN 'Flagged as in-edible' ELSE 'Not flagged' END AS flagName, COUNT(*) AS noOfTypes FROM Report GROUP BY Flag", con);
+                    con.Open();
+                    SqlDataReader sdr = cmd.ExecuteReader();
+
+                    Series chartFlagSeries = chartFlag.Series["chartFlagSeries"];
+
+                    while (sdr.Read())
+                    {
+
+                        chartFlagSeries.Points.AddXY(sdr["flagName"],
+                            sdr["noOfTypes"]);
+
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
 
             }
 
