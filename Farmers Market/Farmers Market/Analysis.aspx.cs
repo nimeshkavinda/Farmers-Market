@@ -149,7 +149,7 @@ namespace Farmers_Market
                 {
 
                     SqlCommand cmd = new
-                        SqlCommand("SELECT City, COUNT(*) AS noOfFarmers FROM Report JOIN Farmer ON Report.Email=Farmer.Email GROUP BY City", con);
+                        SqlCommand("SELECT City, COUNT(*) AS noOfReports FROM Report JOIN Farmer ON Report.Email=Farmer.Email GROUP BY City", con);
                     con.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 
@@ -158,7 +158,7 @@ namespace Farmers_Market
                     while (sdr.Read())
                     {
                         chartFarmerLocationSeries.Points.AddXY(sdr["City"].ToString(),
-                            sdr["noOfFarmers"]);
+                            sdr["noOfReports"]);
                     }
                 }
 
