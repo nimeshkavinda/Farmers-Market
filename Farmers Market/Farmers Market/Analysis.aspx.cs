@@ -21,6 +21,7 @@ namespace Farmers_Market
 
                 getMostPrice();
                 getMostType();
+                getSoldItems();
                 getPriceChartData();
                 getItemTypeChartData();
                 getLocationChartData();
@@ -56,6 +57,21 @@ namespace Farmers_Market
 
             string type = ds.Tables[0].Rows[0]["HarvestType"].ToString();
             mostItemType.Text = type;
+
+        }
+
+        private void getSoldItems()
+        {
+
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conString"].ToString());
+            String qry = "SELECT COUNT(Status) AS soldItems FROM Report WHERE Status='Sold'";
+
+            SqlDataAdapter sda = new SqlDataAdapter(qry, con);
+            DataSet ds = new DataSet();
+            sda.Fill(ds, "Report");
+
+            string sold = ds.Tables[0].Rows[0]["soldItems"].ToString();
+            soldItems.Text = sold;
 
         }
 
@@ -133,7 +149,7 @@ namespace Farmers_Market
                 {
 
                     SqlCommand cmd = new
-                        SqlCommand("SELECT Title, Price FROM Report", con);
+                        SqlCommand("SELECT City, COUNT(*) AS noOfFarmers FROM Report JOIN Farmer ON Report.Email=Farmer.Email GROUP BY City", con);
                     con.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 
@@ -141,8 +157,8 @@ namespace Farmers_Market
 
                     while (sdr.Read())
                     {
-                        chartFarmerLocationSeries.Points.AddXY(sdr["Title"].ToString(),
-                            sdr["Price"]);
+                        chartFarmerLocationSeries.Points.AddXY(sdr["City"].ToString(),
+                            sdr["noOfFarmers"]);
                     }
                 }
 
@@ -164,7 +180,7 @@ namespace Farmers_Market
                 {
 
                     SqlCommand cmd = new
-                        SqlCommand("SELECT CASE Flag WHEN 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' THEN 'Flagged as edible' WHEN 'http://maps.google.com/mapfiles/ms/icons/caution.png' THEN 'Flagged as in-edible' ELSE 'Not flagged' END AS flagName, COUNT(*) AS noOfTypes FROM Report GROUP BY Flag", con);
+                        SqlCommand("SELECT CASE Flag WHEN 'http://maps.google.com/mapfiles/ms/icons/green-dot.png' THEN 'Flagged as edible' WHEN 'http://maps.google.com/mapfiles/ms/icons/caution.png' THEN 'Flagged as in-edible' ELSE 'Not yet flagged' END AS flagName, COUNT(*) AS noOfTypes FROM Report GROUP BY Flag", con);
                     con.Open();
                     SqlDataReader sdr = cmd.ExecuteReader();
 

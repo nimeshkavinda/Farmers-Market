@@ -18,7 +18,7 @@
             </nav>
         </div>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
@@ -44,6 +44,21 @@
                                 </div>
                             </div>
                             <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow border-left-primary py-2" style="margin-bottom: 30px; padding: 1em;">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col mr-2">
+                                <div class="text-uppercase text-secondary font-weight-bold text-xs mb-1"><span>Total sold items</span></div>
+                                <div class="text-dark font-weight-bold h5 mb-0">
+                                    <asp:Label ID="soldItems" runat="server" Text=""></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-auto"><i class="fas fa-coins fa-2x text-gray-300"></i></div>
                         </div>
                     </div>
                 </div>
@@ -83,7 +98,7 @@
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chartItemType" runat="server" Width="400px">
+                            <asp:Chart ID="chartItemType" runat="server" Width="450px">
                                 <Series>
                                     <asp:Series Name="chartItemTypeSeries" ChartArea="chartItemTypeArea" ChartType="Pie" YValuesPerPoint="4" Legend="Harvest Type">
                                     </asp:Series>
@@ -121,9 +136,9 @@
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="chartFarmerLocationArea">
-                                        <AxisX Title="Item">
+                                        <AxisX Title="City">
                                         </AxisX>
-                                        <AxisY Title="Price (in rupees)">
+                                        <AxisY Title="No. of Farmers">
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
@@ -135,11 +150,11 @@
             <div class="col-lg-7 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Flagged Items</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Quality</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
-                            <asp:Chart ID="chartFlag" runat="server" Width="400px">
+                            <asp:Chart ID="chartFlag" runat="server" Width="520px" Palette="Fire">
                                 <Series>
                                     <asp:Series Name="chartFlagSeries" ChartArea="chartFlagArea" ChartType="Doughnut" YValuesPerPoint="4" Legend="Flag Type">
                                     </asp:Series>

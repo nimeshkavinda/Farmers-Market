@@ -33,6 +33,15 @@ namespace Farmers_Market
         protected global::System.Web.UI.WebControls.Label mostItemPrice;
 
         /// <summary>
+        /// soldItems control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label soldItems;
+
+        /// <summary>
         /// chartPrice control.
         /// </summary>
         /// <remarks>
