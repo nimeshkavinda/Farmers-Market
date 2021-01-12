@@ -1,5 +1,11 @@
 # Farmers-Market
-PUSL2002 Group Project
+### PUSL2002 Group Project
+
+We've developed a market website for the Department of Agriculture in Sri Lanka with Keells as our web project.
+
+The Department of Agriculture and Keells are planning to launch this, because they want to make that marketing process easier online. They therefore primarily requested that features be provided through this site, such as where farmers can feed their products and where Keells staff can purchase them.
+
+According to the project, the site has multiple users. Namely Webmaster, DoA, Keells and Farmers. All roles on this site have different logins. Depending on the role they have different permissions for this site.
 
 UI Samples:
  
