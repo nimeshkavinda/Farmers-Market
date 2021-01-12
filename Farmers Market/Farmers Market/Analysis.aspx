@@ -7,7 +7,7 @@
     <div class="container">
         <div class="d-sm-flex justify-content-between align-items-center mb-4" style="margin-top: 50px;">
             <h3 class="text-dark mb-0">Analysis</h3>
-            <a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report</a>
+            <!--<a class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button" href="#"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Analysis Report</a>-->
         </div>
         <div class="row">
             <nav aria-label="breadcrumb">
@@ -125,7 +125,7 @@
             <div class="col-lg-5 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Farmer Locations</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Farmer's Locations</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
@@ -136,9 +136,9 @@
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="chartFarmerLocationArea">
-                                        <AxisX Title="City">
+                                        <AxisX Title="Farmer's City">
                                         </AxisX>
-                                        <AxisY Title="No. of Farmers">
+                                        <AxisY Title="No. of Reports">
                                         </AxisY>
                                     </asp:ChartArea>
                                 </ChartAreas>
