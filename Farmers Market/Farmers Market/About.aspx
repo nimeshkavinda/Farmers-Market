@@ -21,8 +21,8 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 450px;" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h4>First slide label</h4>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h4>Welcome to the Farmer's Market !</h4>
+                        <p>"Where the Farmers Meets the Market" </p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -32,8 +32,8 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 450px;" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h4>Second slide label</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h4>Find & Sell on the Market !</h4>
+                        <p>Now the Farmers Can Find the Market & Sell Their Harvest Fast & Easily !</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -43,8 +43,8 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 450px;" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h4>Third slide label</h4>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h4>Purchasing Harverst is on Your Fingerprints ! </h4>
+                        <p>Now the Keels Super Can Directly Contact With Farmers & Purchase their Harvest Quick & Easily !</p>
                     </div>
                 </div>
             </div>
