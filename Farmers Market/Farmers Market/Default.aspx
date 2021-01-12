@@ -83,9 +83,6 @@
                             document.getElementById('paneInfoDesc').innerText = data.desc;
                             document.getElementById('paneInfoId').innerText = data.reportId;
                             document.getElementById('paneInfoImg').src = data.img;
-                            //paneBuy data
-                            document.getElementById('lblItemPrice').innerText = "Rs. " + data.price;
-                            $('#<%= buyReportId.ClientID %>').val(data.reportId);
                             //farmer data
                             document.getElementById('lblFarmerName').innerText = "Name: " + data.fname + " " + data.lname;
                             document.getElementById('lblFarmerGender').innerText = "Gender: " + data.gender;
@@ -95,6 +92,9 @@
                             document.getElementById('lblFarmerCity').innerText = "City: " + data.city;
                             document.getElementById('lblFarmerState').innerText = "State: " + data.state;
                             document.getElementById('lblFarmerZip').innerText = "Zip: " + data.zip;
+                            //paneBuy data
+                            document.getElementById('lblItemPrice').innerText = "Rs. " + data.price;
+                            $('#<%= buyReportId.ClientID %>').val(data.reportId);
                         });
                     })(marker, data);
 
