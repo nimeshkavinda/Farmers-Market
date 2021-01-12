@@ -125,7 +125,7 @@
             <div class="col-lg-5 col-xl-6">
                 <div class="card shadow mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Report Locations</h6>
+                        <h6 class="text-primary font-weight-bold m-0">Farmer's Locations</h6>
                     </div>
                     <div class="card-body">
                         <div class="chart-area">
@@ -136,7 +136,7 @@
                                 </Series>
                                 <ChartAreas>
                                     <asp:ChartArea Name="chartFarmerLocationArea">
-                                        <AxisX Title="City">
+                                        <AxisX Title="Farmer's City">
                                         </AxisX>
                                         <AxisY Title="No. of Reports">
                                         </AxisY>
