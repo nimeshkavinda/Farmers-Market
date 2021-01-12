@@ -76,9 +76,10 @@
             <div class="col">
                 <div class="card">
                     <img
-                        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                        src="assets/cards/1.jpg"
                         class="card-img-top"
-                        alt="..." />
+                        alt="..."
+                        style="object-fit: cover; width: 100%; height: 400px;"/>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">
@@ -91,9 +92,10 @@
             <div class="col">
                 <div class="card">
                     <img
-                        src="https://mdbootstrap.com/img/new/standard/city/042.jpg"
+                        src="assets/cards/2.jpg"
                         class="card-img-top"
-                        alt="..." />
+                        alt="..."
+                        style="object-fit: cover; width: 100%; height: 400px;"/>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">
@@ -106,9 +108,10 @@
             <div class="col">
                 <div class="card">
                     <img
-                        src="https://mdbootstrap.com/img/new/standard/city/043.jpg"
+                        src="assets/cards/3.jpg"
                         class="card-img-top"
-                        alt="..." />
+                        alt="..."
+                        style="object-fit: cover; width: 100%; height: 400px;"/>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">
@@ -121,9 +124,10 @@
             <div class="col">
                 <div class="card">
                     <img
-                        src="https://mdbootstrap.com/img/new/standard/city/044.jpg"
+                        src="assets/cards/4.jpg"
                         class="card-img-top"
-                        alt="..." />
+                        alt="..."
+                        style="object-fit: cover; width: 100%; height: 400px;"/>
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">
