@@ -21,8 +21,8 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 450px;" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h4>Welcome to the Farmer's Market</h4>
-                        <p>Where the Farmers Meet the Market</p>
+                        <h4>Welcome to Farmer's Market</h4>
+                        <p>A platform for the hard working farmers of our nation</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -43,7 +43,7 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 450px;" />
                     <div class="carousel-caption d-none d-md-block">
-                        <h4>Purchasing Harverst is on Your Fingerprints </h4>
+                        <h4>Purchasing Harverst is on Your Fingerprints</h4>
                         <p>Now the Keels Super Can Directly Contact With Farmers & Purchase their Harvest Quick & Easily</p>
                     </div>
                 </div>
@@ -81,10 +81,10 @@
                         alt="..."
                         style="object-fit: cover; width: 100%; height: 400px;" />
                     <div class="card-body">
-                        <h5 class="card-title">Machineries used in Agriculture</h5>
+                        <h5 class="card-title">Machines and Agriculture</h5>
                         <p class="card-text">
                             With tractors land preparation could be completed more rapidly, permitting to save stored water, 
-which could be used for a second crop.
+which could be used for a second crop. Advancements in technology have come a long way in agriculture.
                         </p>
                     </div>
                 </div>
@@ -133,7 +133,6 @@ consumer's ability to perceive the opportunities.
                         <p class="card-text">
                             Farmers may just be the hardest working people you will ever meet. They get tired and they are tired,
 but it’s not for the reason that usually comes to mind.
-
                         </p>
                     </div>
                 </div>
