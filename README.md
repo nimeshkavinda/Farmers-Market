@@ -1,7 +1,7 @@
 # Farmers-Market
 ### PUSL2002 Group Project
 
-The developed web application is an online market platform for farmers to sell their harvest without having to physically go through the trouble of looking for buyers.
+The developed web application is an online market platform for farmers to sell their harvest without having to physically go through the trouble of looking for buyers.Also, those in the keels staff have the ability to buy the harvest from the farmers without any hassle.
 
 UI Samples:
  
